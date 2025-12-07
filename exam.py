@@ -1,0 +1,331 @@
+#!/usr/bin/env python3
+
+"""myfile.exam
+
+To edit examination paper
+
+-------------------------------
+Path: examsystem/exam.py
+Author: William/2016-01-02
+"""
+
+import collections
+import pathlib
+import datetime
+import copy
+import random
+import yaml
+
+import numpy as np
+
+from pylatex import *
+from pylatex.base_classes import *
+from pylatex.utils import *
+
+import pylatex_ext
+
+from base import *
+
+from config import *
+
+ 
+class Solve(Environment):
+    """solve environment
+    Solve(data='the solution')
+    """
+    escape = False
+    content_separator = "\\\\\n"
+
+
+class ExamPaper(pylatex_ext.XeDocument):
+    """ExamPaper < Document
+    """
+    def __init__(self, subject='', title=None, *args, **kwargs):
+        """
+        Argument:
+            subject: str, the name of the subject of the examination;
+            title: str, will be given automaticly
+        """
+        super(ExamPaper, self).__init__(documentclass='ctexart', document_options='12pt,a4paper', *args, **kwargs)
+        self.latex_name = 'document'
+        self.escape = False
+        self.subject = subject
+        if title is None:
+            import semester
+            s = semester.Semester()
+            title = f'{COLLEGE}{s.totex()}试卷'
+        self.title = title
+
+        self.usepackage(('mathrsfs, amsfonts, amsmath, amssymb', 'enumerate', 'analysis, algebra', 'exampaper',
+            'fancyhdr', 'geometry'))
+
+        self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
+        self.preamble.append(Command('pagestyle', 'fancy'))
+        self.preamble.append(Command('chead', NoEscape(Command('textbf', f'{COLLEGE}考试命题纸').dumps())))
+        self.preamble.append(Command('cfoot', NoEscape(r'\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}')))
+        self.preamble.append(Command('renewcommand', arguments=Arguments(NoEscape(r'\headrulewidth'), '0pt')))
+
+        # header = PageStyle("header")      
+        # with header.create(Foot("C")):
+        #     ft = Command('footnotesize', arguments=NoEscape('第~\\thepage~页~(共~\pageref{LastPage}~页)'))
+        #     header.append(ft)
+        # self.preamble.append(header)
+
+    def build(self):
+        
+        # the head of the paper
+        self.make_head()
+        
+        # make problems
+        if hasattr(self, 'fill'):
+            self.make_fill()
+        self.append('\n\n')
+        if hasattr(self, 'truefalse'):
+            self.make_truefalse()
+        self.append('\n\n')
+        if hasattr(self, 'choice'):
+            self.make_choice()
+        self.append('\n\n')
+        if hasattr(self, 'calculation'):
+            self.make_calculation()
+
+    def make_head(self):
+        self.append(Center(data=pylatex_ext.large(bold(NoEscape(self.title)))))
+        line2 = Command('autolenunderline', '______________')
+        line = Command('autolenunderline', '')
+        table = Tabular('lclclc')
+        table.escape = False
+        table.add_row(('课程', MultiColumn(2, data=line2), '班级', MultiColumn(2, data=line2)))
+        table.add_row(('姓名', line, '学号（末2位）', line, '教师姓名', line))
+
+        mark_table = Tabular('|c|c|c|c|c|c|')
+        mark_table.escape = False
+        mark_table.add_hline()
+        mark_table.add_row(r'\sws{题号} \sws{一} \sws{二} \sws{三} \sws{四} \sws{总评}'.split())
+        mark_table.add_hline()
+        mark_table.add_row((MultiRow(2, data='计分'), '', '', '', '', ''))
+        mark_table.add_empty_row()
+        mark_table.add_hline()
+        self.append(Center(data=table))
+        self.append(Center(data=mark_table))
+        self.append(Command('thispagestyle', 'plain'))
+
+    def make_fill(self):
+        # make filling problems
+        self.append('\\noindent 一、填空题 (每空 2 分, 共 20 分):')
+        with self.create(Enumerate(options='1)')) as enum:
+            enum.escape = False
+            for p in self.fill:
+                enum.add_item(NoEscape(p.totex()))
+
+    def make_truefalse(self):
+        # make true-false problem
+        self.append('\\noindent 二、判断题 (每空 2 分, 共 10 分):')
+        with self.create(Enumerate(options='1)')) as enum:
+            enum.escape = False
+            for p in self.truefalse:
+                enum.add_item(NoEscape(p.totex()))
+
+    def make_choice(self):
+        # make choice problems
+        self.append('\\noindent 三、选择题 (每空 2 分, 共 10 分):')
+        with self.create(Enumerate(options='1)')) as enum:
+            enum.escape = False
+            for p in self.choice:
+                enum.add_item(NoEscape(p.totex()))
+
+
+    def make_calculation(self):
+        # make calculation problems
+        self.append('\\noindent 四、计算题 (每题 10 分, 共 60 分):')
+        with self.create(Enumerate(options='1)')) as enum:
+            enum.escape = False
+            for p in self.calculation:
+                if p.solution is None:
+                    enum.add_item(NoEscape(p.totex() + '\n\n' + Command('vspace', '10cm').dumps()))
+                else:
+                    enum.add_item(NoEscape(p.totex()))
+
+    def write(self, filename=None):
+        if filename is None:
+            filename = self.subject + '.exam'
+        super(ExamPaper, self).write(filename)
+
+    def topdf(self, filename=None):
+        if filename is None:
+            filename = self.subject + '.exam'
+        super(ExamPaper, self).topdf(filename)
+
+    def print(self, filename=None):
+        self.topdf(filename=filename)
+        import sh
+        sh.lpr('temp.pdf')
+        sh.rm('temp.pdf')
+
+    def remove_answer(self):
+        if hasattr(self, 'choice'):
+            for p in self.choice:
+                p.mask_flag = True
+        for p in self.truefalse:
+            p.mask_flag = True
+        for p in self.fill:
+            p.mask_flag = True
+
+        for p in self.calculation:
+            p.solution = None
+
+
+def choice(problems, n=1, excluded=True):
+    ret = []
+    for _ in range(n):
+        if problems:
+            p = random.choice(problems)
+            problems.remove(p)
+            if excluded:
+                problems = [problem for problem in problems if problem.realm !=p.realm]
+            ret.append(p)
+    return ret
+
+
+class Problem(BaseTemplate):
+    # Problem class
+    def __init__(self, template='', answer={}, realm=None, solution=None):
+        """Initialize a problem
+        
+        Keyword Arguments:
+            answer {dict} -- the answer for masked parameters (default: {{}})
+            template {str} -- the template of the problem (default: {''})
+            parameter {dict} -- dict of parameters for the problem (default: {{}})
+            realm {str} -- the realm of the problem (default: {None})
+            solution {Solution} -- the procedure to solving the problem (default: {None})
+        """
+
+        super().__init__(template, parameter)
+        self.answer = answer
+        self.realm = realm
+        self.point = 10
+        self.solution = solution
+
+    @classmethod
+    def random(cls, filename, n=1, encoding='utf-8', *args, **kwargs):
+        # read n problems from yaml files (randomly)
+        problems = cls.read_yaml(filename, encoding='utf-8', *args, **kwargs)
+        return choice(problems, n)
+
+    @classmethod
+    def read_yaml(cls, filename, encoding='utf-8', *args, **kwargs):
+        filename = (BANK_FOLDER / filename).with_suffix('.yaml')
+        yaml_text = filename.read_text(encoding=encoding)
+        return yaml.unsafe_load(yaml_text)
+
+    def __setstate__(self, state):
+        super().__setstate__(state)
+        self.realm = state.get('realm', '')
+
+
+class Solution(BaseTemplate):
+    """Solution class
+    
+    solution of a problem
+    
+    Extends:
+        BaseTemplate
+    """
+
+    def __init__(self, template='', parameter={}, solver=None):
+        super().__init__(template, parameter)
+        self.solver = solver
+        if solver:
+            self.parameter.update({'process': solver.process(), 'answer':'?'})
+
+    @classmethod
+    def fromProblem(cls, problem):
+        obj = cls(parameter=problem.parameter)
+        obj.genTemplate(problem)
+        return obj
+
+    def genTemplate(self, problem=None):
+        # self.template = ''
+        pass
+
+
+class CalculationProblem(Problem):
+
+    def __setstate__(self, state):
+        super().__setstate__(state)
+        self.point = state.get('point', 10)
+        self.realm = state.get('realm', None)
+        self.solution = state.get('solution', None)
+
+    def totex(self):
+        solution = self.solution
+        if solution is not None:   # with solution
+            if isinstance(solution, type) and issubclass(solution, Solution):
+                # solution is a class
+                solution = solution.fromProblem(self)
+            else:
+                solution.update(self.parameter)
+            return super(CalculationProblem, self).totex() + '\n\n' + Solve(data=solution.totex()).dumps()
+        else:  # without solution
+            return super(CalculationProblem, self).totex()
+
+
+class OtherSolution(Solution):
+
+    def genTemplate(self, problem):
+        self.template = problem.template
+
+class OtherProblem(Problem):
+    solution = OtherSolution
+    mask = Command('mypar', '')
+    mask_flag = False
+    masked = {'answer'}
+
+    def totex(self):
+        if self.mask_flag:
+            for k in self.masked:
+                self[k] = self.mask
+        return super(OtherProblem, self).totex()
+
+    def __setstate__(self, state):
+        self.template, self.parameter, self.answer = state['template'] + '~~{{answer}}', state.get('parameter', {}), state['answer']
+        self.solution = None
+
+
+class TrueFalseProblem(OtherProblem):
+
+    def __setstate__(self, state):
+        super().__setstate__(state)
+        if 'answer' in state:
+            if isinstance(state['answer'], bool):
+                self.answer = 'true' if state['answer'] else 'false'
+            else:
+                self.answer = state['answer']
+        else:
+            self.answer = 'true'
+        self.parameter.update({'answer': Command(self.answer)})
+
+
+class ChoiceProblem(OtherProblem):
+
+    def __setstate__(self, state):
+        choices = '~~'.join(['(%s) %s'%(k, v) for k, v in state['options'].items()])
+        self.template, self.parameter, self.answer = state['template'] + '~~{{answer}}\\\\\n' + choices, state.get('parameter', {}), state['answer']
+        self.solution = None
+        self.parameter.update({'answer':Command('mypar', answer)})
+        self.realm = state.get('realm', '')
+
+
+class FillProblem(OtherProblem):
+    mask = Command('autolenunderline', '')
+
+    def __setstate__(self, state):
+        self.template, self.parameter, self.answer = state['template'], state.get('parameter', {}), state.get('answer', {})
+        self.solution = None
+        self.masked = set(self.answer.keys()) 
+        self.parameter.update({k:Command('autolenunderline', NoEscape(v)) for k, v in self.answer.items()})
+        self.realm = state.get('realm', '')
+
+
+# with open('bank/python_choice.yaml', encoding='utf-8') as fo:
+#     problem = yaml.unsafe_load(fo)[0]
