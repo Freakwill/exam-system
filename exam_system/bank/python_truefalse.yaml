@@ -7,27 +7,35 @@
   realm: Python
   template: "学习 Python 是一件非常快乐，非常有成就感的事情;"
 - !!python/object:exam.TrueFalseProblem
-  answer: true
+  answer: false
   realm: Python
   parameter: {keyword: def}
   template: |
     {{keyword}} 符合标识符的文法，因此可作为变量名;
 - !!python/object:exam.TrueFalseProblem
-  answer: false
-  realm: structured
-  template: "Python 有 case 语句;"
-- !!python/object:exam.TrueFalseProblem
-  answer: false
+  answer: true
   realm: Python
-  template: "人们再也不可能设计出比 Python 更完美的计算机语言了;"
+  template: "Python 是一种动态类型面向对象的过程式解释型语言;"
 - !!python/object:exam.TrueFalseProblem
-  answer: false
+  answer: true
   realm: Python
-  template: "Python 等计算机语言是舶来品，学习它会破坏社会主义国家的社会风气;"
+  template: "相比传统计算机语言，Python 运行速度比较慢，但开发效率高;"
+# - !!python/object:exam.TrueFalseProblem
+#   answer: false
+#   realm: Python
+#   template: "Python 等计算机语言是舶来品，学习它会破坏社会主义国家的社会风气;"
 - !!python/object:exam.TrueFalseProblem
-  answer: false
+  answer: true
+  realm: grammar
+  template: Python的布尔型其实是特殊的整型;
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: grammar
+  template: 对 Python 来说，缩进具有语法功能;
+- !!python/object:exam.TrueFalseProblem
+  answer: true
   realm: structured
-  template: "Python 有 goto 语句;"
+  template: "Python 没有 goto 语句;"
 - !!python/object:exam.TrueFalseProblem
   answer: true
   realm: structured
@@ -37,23 +45,46 @@
   realm: structured
   template: "Python 有 do-while 语句;"
 - !!python/object:exam.TrueFalseProblem
-  answer: true
-  realm: Python
-  template: "Python 是一种动态类型面向对象的过程式解释型语言;"
+  answer: false
+  realm: structured
+  template: "Python 有 case 语句;"
 - !!python/object:exam.TrueFalseProblem
   answer: true
-  realm: Python
-  template: "相比传统计算机语言，Python 运行速度比较慢，但开发效率高;"
+  realm: function
+  template: Python中没有函数指针的概念，函数的行为和普通变量是一样的;
 - !!python/object:exam.TrueFalseProblem
-  answer: true
-  realm: Python
+  answer: false
+  realm: function
+  template: Python 中的函数不能作为另一个函数的参数或返回值;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: function
+  template: 不能在Python 的函数内部操作全局变量;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: function
+  template: 函数内部不能调用函数自身，否则会陷入无限循环;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: file
+  template: "用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: file
+  template: "用open函数打开文件得到的返回值是文件中的内容;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: oop
   template: |
-    Python 真正实现了"万物皆对象"的程序设计理念;
+    如果要为某个类定义“+”方法，直接定义`def +(self, other): pass`即可;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: oop
+  template: |
+    类型`Hero`中定义了方法`attack`。`attack`可以像普通函数那样被直接访问;
 - !!python/object:exam.TrueFalseProblem
   answer: true
-  realm: grammar
-  template: Python的布尔型其实是特殊的整型;
-- !!python/object:exam.TrueFalseProblem
-  answer: true
-  realm: grammar
-  template: 对 Python 来说，缩进具有语法功能;
+  realm: oop
+  template: |
+    继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
+

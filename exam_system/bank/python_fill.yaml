@@ -3,6 +3,21 @@
   answer: {motto: "人生苦短"}
   realm: Python
 - !!python/object:exam.FillProblem
+  template: "说程序设计体现 Python 简洁明了的风格的形容词是{{style}};"
+  answer: {style: "pythonic"}
+  realm: Python
+- !!python/object:exam.FillProblem
+  parameter: {dream: "克服地心引力跨越大海飞向太空"}
+  template: |
+    你要{{dream}}，为了实现这个梦想，你首先要下载具有该功能的{{third}} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
+  answer: {keyword: "import", third: "第三方库"}
+  realm: Python
+- !!python/object:exam.FillProblem
+  template: |
+    "写出为变量greet赋值为字符串`Hello, President`的语句: {{statement}};"
+  answer: {statement: "greet=\"Hello, President\""}
+  realm: grammar
+- !!python/object:exam.FillProblem
   template: "写出至少三种内建类型: {{int}}、{{float}}、{{str}};"
   answer: {int: "int", float: "float", str: "str"}
   realm: type
@@ -15,43 +30,29 @@
   answer: {type: 'dict'}
   realm: type
 - !!python/object:exam.FillProblem
-  template: "Python 的吉祥物是{{mascot}};"
-  answer: {mascot: "python"}
-  realm: Python
-- !!python/object:exam.FillProblem
   template: "视频和图像属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
-  answer: {type: "二进制", write: "wb", read: "rd"}
+  answer: {type: "二进制", write: "wb", read: "rb"}
   realm: file
 - !!python/object:exam.FillProblem
   template: "Python脚本文件后缀是{{ext}};"
   answer: {ext: ".py"}
   realm: file
 - !!python/object:exam.FillProblem
-  template: "说程序设计体现 Python 简洁明了的风格的形容词是{{style}};"
-  answer: {style: "pythonic"}
-  realm: Python
+  template: "如果函数没有返回语句，那么它默认范围: {{none}};"
+  answer: {none: "none"}
+  realm: function
 - !!python/object:exam.FillProblem
-  template: "Python 内置丑了吧唧的 IDE 是{{idle}}; 公认最好的 IDE 是 {{pycharm}}."
-  answer: {idle: "idle", pycharm: "PyCharm"}
-  realm: Python
-- !!python/object:exam.FillProblem
-  parameter: {dream: "克服地心引力跨越大海飞向太空"}
-  template: |
-    你要{{dream}}，为了实现这个梦想，你首先要下载具有该功能的{{third}} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
-  answer: {keyword: "import", third: "第三方库"}
-  realm: Python
-- !!python/object:exam.FillProblem
-  template: "面向对象编程的最高哲学是 {{doctrine}};"
-  answer: {doctrine: "万事万物都是对象"}
-  realm: OOP
+  template: "匿名函数的关键字是: {{lambda}};"
+  answer: {lambda: "lambda"}
+  realm: function
 - !!python/object:exam.FillProblem
   template: "循环语句中，Python 的控制命令有: {{break}}、{{continue}};"
   answer: {break: "break", continue: "continue"}
   realm: structured
 - !!python/object:exam.FillProblem
-  template: "Python 网络编程堪称绝配的两个第三方库: {{requests}}、{{bs4}};"
-  answer: {requtests: "requests", bs4: "bs4"}
-  realm: web
+  template: "读取文件内容前，一般用{{open}}创建文件对象;"
+  answer: {open: "open"}
+  realm: file
 - !!python/object:exam.FillProblem
   template: "文件操作结束时候要执行{{close}}命令;"
   answer: {close: "close"}
@@ -60,3 +61,23 @@
   template: "创建文件对象的常用语法糖是{{with}}语句;"
   answer: {with: "with"}
   realm: file
+# - !!python/object:exam.FillProblem
+#   template: "面向对象编程的最高哲学是 {{doctrine}};"
+#   answer: {doctrine: "万事万物都是对象"}
+#   realm: OOP
+- !!python/object:exam.FillProblem
+  template: "定义方法的关键字是：{{keyword}};"
+  answer: {keyword: "def"}
+  realm: OOP
+- !!python/object:exam.FillProblem
+  template: "至少写出两个个你熟悉的标准方库: {{lib1}}、{{lib2}};"
+  answer: {lib1: "os", lib2: "pathlib"}
+  realm: lib
+- !!python/object:exam.FillProblem
+  template: "下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: {{import}}"
+  answer: {import: "from numpy.random import rand"}
+  realm: lib
+- !!python/object:exam.FillProblem
+  template: "Python 网络编程堪称绝配的两个第三方库: {{requests}}、{{bs4}};"
+  answer: {requests: "requests", bs4: "bs4"}
+  realm: lib

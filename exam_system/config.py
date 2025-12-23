@@ -1,4 +1,6 @@
-ROOT = pathlib.Path('~/BIMSA').expanduser()
-BANK_FOLDER = ROOT / 'examsystem/bank'
+import pathlib
+
+ROOT = pathlib.Path('~/BIMSA/exam-system').expanduser()
+BANK_FOLDER = ROOT / 'exam_system/bank'
 PAPER_FOLDER = ROOT / '考试'
-OLLEGE = "人民大学-雁栖湖人工智能学院"
+COLLEGE = "人民大学-雁栖湖人工智能学院"

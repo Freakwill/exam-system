@@ -41,8 +41,24 @@ class BaseTemplate:
     """
 
     def __init__(self, template='', parameter={}):
-        self.template = template
-        self.parameter = parameter
+        self._template = template
+        self._parameter = parameter
+
+    @property
+    def template(self):
+        return self._template
+
+    @template.setter
+    def template(self, v):
+        self._template = v
+
+    @property
+    def parameter(self):
+        return self._parameter
+
+    @parameter.setter
+    def parameter(self, v):
+        self._parameter = v
 
     def __len__(self):
         return len(self.parameter)
@@ -110,6 +126,9 @@ class BaseTemplate:
             for key, val in self.parameter.items():
                 self.parameter[key] = func
 
+    def template_convert(self, func):
+        self.template = func(self.template)
+
     def mask_with(self, keys={'answer'}, mask='***'):
         '''mask the some parameters
         In examination, you have to mask the answer
@@ -117,4 +136,16 @@ class BaseTemplate:
         '''
         for key in keys:
             self[key] = mask
+
+    def __imatmul__(self, action):
+        if isinstance(action, list):
+            for a in action:
+                self.__mat_multiply__(a)
+        else:
+            self.convert(action)
+            self.template_convert(action)
+        return self
+
+    def __matmul__(self, action):
+        return self.__imatmul__(action)
 

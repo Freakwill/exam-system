@@ -46,7 +46,7 @@ class ExamPaper(pylatex_ext.XeDocument):
             subject: str, the name of the subject of the examination;
             title: str, will be given automaticly
         """
-        super(ExamPaper, self).__init__(documentclass='ctexart', document_options='12pt,a4paper', *args, **kwargs)
+        super().__init__(documentclass='ctexart', document_options='12pt,a4paper', *args, **kwargs)
         self.latex_name = 'document'
         self.escape = False
         self.subject = subject
@@ -56,7 +56,7 @@ class ExamPaper(pylatex_ext.XeDocument):
             title = f'{COLLEGE}{s.totex()}试卷'
         self.title = title
 
-        self.usepackage(('mathrsfs, amsfonts, amsmath, amssymb', 'enumerate', 'analysis, algebra', 'exampaper',
+        self.usepackage(('mathrsfs, amsfonts, amsmath, amssymb', 'enumerate', 'exampaper',
             'fancyhdr', 'geometry'))
 
         self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
@@ -77,16 +77,16 @@ class ExamPaper(pylatex_ext.XeDocument):
         self.make_head()
         
         # make problems
-        if hasattr(self, 'fill'):
+        if self.check('fill'):
             self.make_fill()
         self.append('\n\n')
-        if hasattr(self, 'truefalse'):
+        if self.check('truefalse'):
             self.make_truefalse()
         self.append('\n\n')
-        if hasattr(self, 'choice'):
+        if self.check('choice'):
             self.make_choice()
         self.append('\n\n')
-        if hasattr(self, 'calculation'):
+        if self.check('calculation'):
             self.make_calculation()
 
     def make_head(self):
@@ -110,9 +110,12 @@ class ExamPaper(pylatex_ext.XeDocument):
         self.append(Center(data=mark_table))
         self.append(Command('thispagestyle', 'plain'))
 
+    def check(self, a):
+        return hasattr(self, a) and getattr(self, a)
+
     def make_fill(self):
         # make filling problems
-        self.append('\\noindent 一、填空题 (每空 2 分, 共 20 分):')
+        self.append('\\noindent 一、填空题 (每空 2 分, 共 20 空):')
         with self.create(Enumerate(options='1)')) as enum:
             enum.escape = False
             for p in self.fill:
@@ -120,7 +123,7 @@ class ExamPaper(pylatex_ext.XeDocument):
 
     def make_truefalse(self):
         # make true-false problem
-        self.append('\\noindent 二、判断题 (每空 2 分, 共 10 分):')
+        self.append('\\noindent 二、判断题 (每空 2 分, 共 10 空):')
         with self.create(Enumerate(options='1)')) as enum:
             enum.escape = False
             for p in self.truefalse:
@@ -128,16 +131,15 @@ class ExamPaper(pylatex_ext.XeDocument):
 
     def make_choice(self):
         # make choice problems
-        self.append('\\noindent 三、选择题 (每空 2 分, 共 10 分):')
+        self.append('\\noindent 三、选择题 (每空 4 分, 共 10 空):')
         with self.create(Enumerate(options='1)')) as enum:
             enum.escape = False
             for p in self.choice:
                 enum.add_item(NoEscape(p.totex()))
 
-
     def make_calculation(self):
         # make calculation problems
-        self.append('\\noindent 四、计算题 (每题 10 分, 共 60 分):')
+        self.append('\\noindent 四、计算题 (每题 10 分, 共 2 题):')
         with self.create(Enumerate(options='1)')) as enum:
             enum.escape = False
             for p in self.calculation:
@@ -207,15 +209,15 @@ class Problem(BaseTemplate):
         self.solution = solution
 
     @classmethod
-    def random(cls, filename, n=1, encoding='utf-8', *args, **kwargs):
+    def random(cls, filename, n=1, *args, **kwargs):
         # read n problems from yaml files (randomly)
-        problems = cls.read_yaml(filename, encoding='utf-8', *args, **kwargs)
+        problems = cls.read_yaml(filename, *args, **kwargs)
         return choice(problems, n)
 
     @classmethod
-    def read_yaml(cls, filename, encoding='utf-8', *args, **kwargs):
+    def read_yaml(cls, filename, *args, **kwargs):
         filename = (BANK_FOLDER / filename).with_suffix('.yaml')
-        yaml_text = filename.read_text(encoding=encoding)
+        yaml_text = filename.read_text(*args, **kwargs)
         return yaml.unsafe_load(yaml_text)
 
     def __setstate__(self, state):
@@ -250,11 +252,11 @@ class Solution(BaseTemplate):
 
 
 class CalculationProblem(Problem):
+    # should show the solutin for calculation problems
 
     def __setstate__(self, state):
         super().__setstate__(state)
         self.point = state.get('point', 10)
-        self.realm = state.get('realm', None)
         self.solution = state.get('solution', None)
 
     def totex(self):
@@ -265,9 +267,9 @@ class CalculationProblem(Problem):
                 solution = solution.fromProblem(self)
             else:
                 solution.update(self.parameter)
-            return super(CalculationProblem, self).totex() + '\n\n' + Solve(data=solution.totex()).dumps()
+            return super().totex() + '\n\n' + Solve(data=solution.totex()).dumps()
         else:  # without solution
-            return super(CalculationProblem, self).totex()
+            return super().totex()
 
 
 class OtherSolution(Solution):
@@ -276,6 +278,7 @@ class OtherSolution(Solution):
         self.template = problem.template
 
 class OtherProblem(Problem):
+
     solution = OtherSolution
     mask = Command('mypar', '')
     mask_flag = False
@@ -285,10 +288,11 @@ class OtherProblem(Problem):
         if self.mask_flag:
             for k in self.masked:
                 self[k] = self.mask
-        return super(OtherProblem, self).totex()
+        return super().totex()
 
     def __setstate__(self, state):
-        self.template, self.parameter, self.answer = state['template'] + '~~{{answer}}', state.get('parameter', {}), state['answer']
+        super().__setstate__(state)
+        self.answer = state['answer']
         self.solution = None
 
 
@@ -296,6 +300,7 @@ class TrueFalseProblem(OtherProblem):
 
     def __setstate__(self, state):
         super().__setstate__(state)
+        self.template += '~~{{answer}}'
         if 'answer' in state:
             if isinstance(state['answer'], bool):
                 self.answer = 'true' if state['answer'] else 'false'
@@ -309,10 +314,12 @@ class TrueFalseProblem(OtherProblem):
 class ChoiceProblem(OtherProblem):
 
     def __setstate__(self, state):
+        super().__setstate__(state)
+        self.template += '~~{{answer}}'
         choices = '~~'.join(['(%s) %s'%(k, v) for k, v in state['options'].items()])
-        self.template, self.parameter, self.answer = state['template'] + '~~{{answer}}\\\\\n' + choices, state.get('parameter', {}), state['answer']
+        self.template += '\\\\\n' + choices
         self.solution = None
-        self.parameter.update({'answer':Command('mypar', answer)})
+        self.parameter.update({'answer': Command('mypar', self.answer)})
         self.realm = state.get('realm', '')
 
 
@@ -320,11 +327,9 @@ class FillProblem(OtherProblem):
     mask = Command('autolenunderline', '')
 
     def __setstate__(self, state):
-        self.template, self.parameter, self.answer = state['template'], state.get('parameter', {}), state.get('answer', {})
-        self.solution = None
+        super().__setstate__(state)
         self.masked = set(self.answer.keys()) 
         self.parameter.update({k:Command('autolenunderline', NoEscape(v)) for k, v in self.answer.items()})
-        self.realm = state.get('realm', '')
 
 
 # with open('bank/python_choice.yaml', encoding='utf-8') as fo:

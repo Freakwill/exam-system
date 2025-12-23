@@ -1,16 +1,3 @@
-- !!python/object:exam.ChoiceProblem
-  parameter: {}
-  options: {A: Hello World, B: Hello Kitty, C: Hello Kugou, D: 你好世界}
-  answer: A
-  realm: programming
-  template: 学习编程的第一个命令是？
-
-- !!python/object:exam.ChoiceProblem
-  parameter: {}
-  options: {A: 元组, B: 字典, C: 列表, D: 集合}
-  answer: B
-  realm: type
-  template: 存储个人信息时，最适合采用什么数据类型？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -26,6 +13,48 @@
   realm: Python
   template: Python发明人是在什么情况下发明Python的？
 
+# - !!python/object:exam.ChoiceProblem
+#   parameter: {}
+#   options: {A: 征服宇宙, B: 侵入FBI, C: 设计程序，造福人类, D: 挣钱养家}
+#   answer: C
+#   realm: Python
+#   template: 精通Python后，最哪件事情最高尚？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: Hello World, B: Hello Kitty, C: Hello Kugou, D: 你好世界}
+  answer: A
+  realm: programming
+  template: 学习编程的第一个命令是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: print, B: int, C: CONSTANT, D: def}
+  answer: D
+  realm: programming
+  template: 下面哪个不能作为Python的变量？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 字符串, B: 数字, C: 列表, D: 元组}
+  answer: C
+  realm: programming
+  template: 下面哪个是可变变量的类型？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 元组, B: 字典, C: 列表, D: 集合}
+  answer: B
+  realm: type
+  template: 存储个人信息时，最适合采用什么数据类型？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 列表中的元素不能再是列表, B: 列表中的元素不能是元组, C: 列表中的元素类型必须相同, D: 在表示数据方面，列表和元组没有明显区别}
+  answer: D
+  realm: programming
+  template: 关于列表说法正确的是？
+
 - !!python/object:exam.ChoiceProblem
   options: {A: 直接退出程序, B: 关机, C: 拔电源, D: 关闭文件对象}
   answer: D
@@ -34,28 +63,100 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: 征服宇宙, B: 侵入FBI, C: 设计程序，造福人类, D: 挣钱养家}
-  answer: C
-  realm: Python
-  template: 精通Python后，最哪件事情最高尚？
-
-- !!python/object:exam.ChoiceProblem
-  parameter: {}
   options: {A: break, B: continue, C: return, D: goto}
   answer: D
   realm: structured
-  template: 下面哪个起到流程控制作用的关键词不是Python的关键词;
+  template: 下面哪个起到流程控制作用的关键字不是Python的关键字;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 元组, B: 字典, C: 整数, D: 字符串}
+  answer: C
+  realm: type
+  template: for循环不能用于遍历什么类型的数据;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 元组, B: 字典, C: 列表, D: 字符串}
+  answer: B
+  realm: type
+  template: 方法`.item`常用与什么类型数据的遍历;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
   options: {A: def, B: func, C: class, D: function}
   answer: A
   realm: function
-  template: 下面哪个是Python创建函数的关键词;
+  template: 下面哪个是Python创建函数的关键字;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "foo(1)", B: "foo(1, 2, 3, 'hello')", C: "foo(1, y=2, z='hello')", D: "foo(y=3, 2, 3)"}
+  answer: B
+  realm: function
+  template: |
+    定义函数 `def foo(x, y, z:int=1, *args, **args): pass`。正确调用这个函数的命令是;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
   options: {A: def, B: classdef, C: class, D: cls}
   answer: C
   realm: oop
-  template: 下面哪个是Python创建类的关键词;
+  template: 下面哪个是Python创建类的关键字;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: init, B: new, C: 没有关键字, D: cls}
+  answer: C
+  realm: oop
+  template: 下面哪个是Python新建对象的关键字;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: Card也是变量, B: Card可像函数一样调用, C: card的类型是Card, D: Card本身无类型}
+  answer: D
+  realm: oop
+  template: 设`Card`是类名，card是其对象，则下述说法错误的是;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`__new__`", B: "`__init__`", C: "`_new_`", D: "`_init_`"}
+  answer: B
+  realm: oop
+  template: 下面哪个是Python初始化对象的方法;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "hero['attack']", B: "hero.attack", C: "herro(attack)", D: "attack.hero"}
+  answer: B
+  realm: oop
+  template: 设类`Hero`中定义了方法`attack`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: subclass, B: extend, C: child, D: class}
+  answer: D
+  realm: oop
+  template: 子类继承父类的关键字是;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`include`", B: "`import`", C: "`export`", D: "`use`"}
+  answer: B
+  realm: import
+  template: 下面哪个是Python导入包的关键字;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`import array`", B: "`import numpy as np`", C: "`from numpy import array`", D: "`from array import numpy`"}
+  answer: B
+  realm: import
+  template: |
+    同学用pip工具下载了包`numpy`，他想直接在脚本中使用包中的变量`array`，那么正确的做法是;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 使用PIL, B: 使用Image, C: 为Image赋值, D: 为PIL赋值}
+  answer: A
+  realm: import
+  template: |
+    通过`from PIL import Image`导入包之后，下面可以做的是;
