@@ -1,0 +1,27 @@
+- !!python/object:exam.CalculationProblem
+  template: |
+    下面是函数定义与调用代码. 请指出的所有Bug.
+
+    def play(name, game='Royal Crash', time):
+        # 定义函数play
+        # 本程序用于调查学生玩游戏时间
+
+        print('Student: ', name)
+        print(f'play {game} with {time} hours!')
+
+        if time > 3
+            print(f'{name} is a bad student.')
+        else time > 1:
+            print(f'Just so so.')
+        else:
+            print(f'Teachers will like {name}.')
+
+    play(name='Mario', 'Pokemon', 3)   # 第一次调用
+    play(0.5, game='CS, name='Steve')  # 第二次调用
+  answer: |
+    1. time需要定义默认值；或者time在game前面
+    2. if条件句后加":"
+    3. 第一个 else 改为 elif
+    4. 第一次调用中去掉"name=", 或者后面加上"game="和"time="
+    5. 第二次调用把0.5写在最后
+  realm: Python

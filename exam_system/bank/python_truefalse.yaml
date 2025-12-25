@@ -87,4 +87,24 @@
   realm: oop
   template: |
     继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: oop
+  template: |
+    定义类Animal之后, 用Animal()新建对象时，程序会自动调用方法`__init__`;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: import
+  template: |
+    无论包`mypackage`安装在哪里，`import mypackage`都会自动搜索并导入该包;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: import
+  template: |
+    命令`from mypackage import foo`在导入包中的变量foo同时，也会导入包`mypackage`自身;
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: import
+  template: |
+    只要文件夹的名称正常，并且在其中新建文件`__init__.py`，那么它就是Python包;
 

@@ -1,0 +1,5 @@
+pyyaml
+pylatex
+pystache
+
+# pylatex_ext

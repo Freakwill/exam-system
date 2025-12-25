@@ -40,6 +40,7 @@ class Solve(Environment):
 class ExamPaper(pylatex_ext.XeDocument):
     """ExamPaper < Document
     """
+
     def __init__(self, subject='', title=None, *args, **kwargs):
         """
         Argument:
@@ -57,7 +58,7 @@ class ExamPaper(pylatex_ext.XeDocument):
         self.title = title
 
         self.usepackage(('mathrsfs, amsfonts, amsmath, amssymb', 'enumerate', 'exampaper',
-            'fancyhdr', 'geometry'))
+            'fancyhdr', 'geometry', 'listings'))
 
         self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
         self.preamble.append(Command('pagestyle', 'fancy'))
@@ -151,12 +152,12 @@ class ExamPaper(pylatex_ext.XeDocument):
     def write(self, filename=None):
         if filename is None:
             filename = self.subject + '.exam'
-        super(ExamPaper, self).write(filename)
+        super().write(filename)
 
     def topdf(self, filename=None):
         if filename is None:
             filename = self.subject + '.exam'
-        super(ExamPaper, self).topdf(filename)
+        super().topdf(filename)
 
     def print(self, filename=None):
         self.topdf(filename=filename)
@@ -252,7 +253,7 @@ class Solution(BaseTemplate):
 
 
 class CalculationProblem(Problem):
-    # should show the solutin for calculation problems
+    # should show the solution for calculation problems
 
     def __setstate__(self, state):
         super().__setstate__(state)
@@ -263,7 +264,7 @@ class CalculationProblem(Problem):
         solution = self.solution
         if solution is not None:   # with solution
             if isinstance(solution, type) and issubclass(solution, Solution):
-                # solution is a class
+                # get solution automatically
                 solution = solution.fromProblem(self)
             else:
                 solution.update(self.parameter)
@@ -276,6 +277,7 @@ class OtherSolution(Solution):
 
     def genTemplate(self, problem):
         self.template = problem.template
+
 
 class OtherProblem(Problem):
 

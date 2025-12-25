@@ -160,3 +160,10 @@
   realm: import
   template: |
     通过`from PIL import Image`导入包之后，下面可以做的是;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`print('Hey, man')`", B: "`class = ['Apple', 'Orange', 'Banana']`", C: "`print=520`", D: "str(520)"}
+  answer: B
+  realm: grammar
+  template: 下面哪个是不合法的命令;

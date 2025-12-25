@@ -35,7 +35,7 @@ class Class(Orgonisation):
     name: name
     members: members'''
     def __init__(self, name, members):
-        super(Class, self).__init__(name, members)
+        super().__init__(name, members)
         self.name = name
         self.members = members
         self.basic_keys = ['name', 'gender']
