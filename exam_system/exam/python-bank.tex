@@ -11,9 +11,9 @@
 \usepackage{exampaper}%
 \usepackage{fancyhdr}%
 \usepackage{geometry}%
+\usepackage{listings}%
 \usepackage{ragged2e}%
 \usepackage{multirow}%
-\usepackage{listings}
 %
 \geometry{left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm}%
 \pagestyle{fancy}%
@@ -234,7 +234,6 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 \item%
 下面是函数定义与调用代码. 请指出的所有Bug.
 
-\begin{lstlisting}[language=Python]
 def play(name, game='Royal Crash', time):
     # 定义函数play
     # 本程序用于调查学生玩游戏时间
@@ -251,7 +250,7 @@ def play(name, game='Royal Crash', time):
 
 play(name='Mario', 'Pokemon', 3)   # 第一次调用
 play(0.5, game='CS, name='Steve')  # 第二次调用
-\end{lstlisting}
+
 
 \vspace{10cm}%
 \end{enumerate}%

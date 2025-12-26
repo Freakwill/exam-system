@@ -23,7 +23,8 @@ def replace_backticks_with_verb(text):
 @keep
 def replace_backticks_with_listing(text):
 
-    pattern = r"```(\w+)?\n(.*?)\n```"
+    # pattern = r"```(\w+)?\n(.*?)\n```"
+    pattern = r"```(\w+)?\n((?:.*?\n)*?)```"
 
     # Define the replacement function
     def replace(match):
@@ -37,5 +38,4 @@ def replace_backticks_with_listing(text):
     # Perform the regex replacement
     new_text = re.sub(pattern, replace, text)
     return new_text
-
 

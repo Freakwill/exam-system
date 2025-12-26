@@ -15,16 +15,15 @@ paper.build()
 paper.write(filename='exam/python-bank')
 
 
-# for p in paper.choice:
-#     p.mask_flag = True
-# for p in paper.truefalse:
-#     p.mask_flag = True
-# for p in paper.fill:
-#     p.mask_flag = True
+for p in paper.choice:
+    p.mask_flag = True
+for p in paper.truefalse:
+    p.mask_flag = True
+for p in paper.fill:
+    p.mask_flag = True
+for p in paper.calculation:
+    p.solution = None
 
-# for p in paper.calculation:
-#     p.solution = None
-
-# paper.data = []
-# paper.build()
-# paper.write('exam/python_exam')
+paper.data = []
+paper.build()
+paper.write('exam/python_exam')
