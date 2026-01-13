@@ -44,6 +44,8 @@ class BaseTemplate:
         self._template = template
         self._parameter = parameter
 
+        # self.preprocess()
+
     @property
     def template(self):
         return self._template
@@ -136,16 +138,4 @@ class BaseTemplate:
         '''
         for key in keys:
             self[key] = mask
-
-    def __imatmul__(self, action):
-        if isinstance(action, list):
-            for a in action:
-                self.__mat_multiply__(a)
-        else:
-            self.convert(action)
-            self.template_convert(action)
-        return self
-
-    def __matmul__(self, action):
-        return self.__imatmul__(action)
 

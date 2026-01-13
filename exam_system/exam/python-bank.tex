@@ -66,7 +66,7 @@ C 语言中的结构体类似于 Python 中的$\autolenunderline{dict}$类型;%
 \item%
 Python脚本文件后缀是\autolenunderline{.py};%
 \item%
-如果函数没有返回语句，那么它默认范围: \autolenunderline{none};%
+如果函数没有返回语句，那么它默认返回: \autolenunderline{None};%
 \item%
 匿名函数的关键字是: \autolenunderline{lambda};%
 \item%
@@ -84,7 +84,11 @@ Python脚本文件后缀是\autolenunderline{.py};%
 \item%
 下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{from numpy.random import rand}%
 \item%
-Python 网络编程堪称绝配的两个第三方库: \autolenunderline{requests}、\autolenunderline{bs4};%
+Python 网络编程中堪称绝配的两个第三方库/模块: \autolenunderline{requests}、\autolenunderline{bs4};%
+\item%
+表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: \autolenunderline{200};%
+\item%
+连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{IP地址}、\autolenunderline{端口号}两部分;%
 \end{enumerate}%
 
 
@@ -147,6 +151,9 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 \item%
 只要文件夹的名称正常，并且在其中新建文件\verb|__init__.py|，那么它就是Python包;
 ~~\true%
+\item%
+requests的get方法可以下载任何网站上的资源;
+~~\false%
 \end{enumerate}%
 
 
@@ -161,7 +168,7 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 (A) 内心迷茫的时候~~(B) 在实验室里专研~~(C) 度假时候无聊打发时间~~(D) 泡咖啡馆奇思妙想%
 \item%
 学习编程的第一个命令是？~~\mypar{A}\\
-(A) Hello World~~(B) Hello Kitty~~(C) Hello Kugou~~(D) 你好世界%
+(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey dude%
 \item%
 下面哪个不能作为Python的变量？~~\mypar{D}\\
 (A) print~~(B) int~~(C) CONSTANT~~(D) def%
@@ -171,6 +178,9 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 \item%
 存储个人信息时，最适合采用什么数据类型？~~\mypar{B}\\
 (A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
+\item%
+关于内建变量解释正确的是？~~\mypar{B}\\
+(A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的~~(C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
 \item%
 关于列表说法正确的是？~~\mypar{D}\\
 (A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
@@ -219,12 +229,15 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 ~~\mypar{B}\\
 (A) \verb|import array|~~(B) \verb|import numpy as np|~~(C) \verb|from numpy import array|~~(D) \verb|from array import numpy|%
 \item%
-通过\verb|from PIL import Image|导入包之后，下面可以做的是;
+通过\verb|from PIL import Image|导入包之后，下面不可以做的是;
 ~~\mypar{A}\\
-(A) 使用PIL~~(B) 使用Image~~(C) 为Image赋值~~(D) 为PIL赋值%
+(A) 使用变量\verb|PIL|~~(B) 使用变量\verb|Image|~~(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
 \item%
 下面哪个是不合法的命令;~~\mypar{B}\\
 (A) \verb|print('Hey, man')|~~(B) \verb|class = ['Apple', 'Orange', 'Banana']|~~(C) \verb|print=520|~~(D) str(520)%
+\item%
+实现主机之间网络连接的标准方法是建立;~~\mypar{C}\\
+(A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
 \end{enumerate}%
 
 
@@ -233,7 +246,7 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 \begin{enumerate}[1)]%
 \item%
 下面是函数定义与调用代码. 请指出的所有Bug.
-
+\begin{lstlisting}[language=python]
 def play(name, game='Royal Crash', time):
     # 定义函数play
     # 本程序用于调查学生玩游戏时间
@@ -250,6 +263,36 @@ def play(name, game='Royal Crash', time):
 
 play(name='Mario', 'Pokemon', 3)   # 第一次调用
 play(0.5, game='CS, name='Steve')  # 第二次调用
+
+\end{lstlisting}
+
+
+\vspace{10cm}%
+\item%
+下面是函数定义与调用代码. 请指出三处Bug.
+\begin{lstlisting}[language=python]
+function guess_price():
+    # 定义函数 guess_price
+    # 本程序用于实现一个多轮猜价格游戏
+
+    price = 50
+    guess_times = 0
+    while guess_times < 3:
+        guess = input("请输入你的猜测: ")
+        guess_times += 1
+        if guess = price:
+            print("恭喜你猜对了!")
+            return
+        elif guess > price:
+            print("你的猜测太高了.")
+        else:
+            print("你的猜测太低了.")
+    print("你已经用完了所有的猜测机会.")
+    print("正确的价格是:", price)
+
+guess_price()  # 调用函数
+
+\end{lstlisting}
 
 
 \vspace{10cm}%

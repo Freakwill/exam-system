@@ -22,7 +22,7 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: Hello World, B: Hello Kitty, C: Hello Kugou, D: 你好世界}
+  options: {A: 打印Hello World, B: 打印Hello Kitty, C: 打印Hello Kugou, D: 打印Hey dude}
   answer: A
   realm: programming
   template: 学习编程的第一个命令是？
@@ -47,6 +47,13 @@
   answer: B
   realm: type
   template: 存储个人信息时，最适合采用什么数据类型？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 内建变量只能在函数内使用, B: 内建变量是 Python 预先定义好可直接使用的, C: 内建变量不可重新赋值, D: 内建变量都以双下划线开头和结尾}
+  answer: B
+  realm: type
+  template: 关于内建变量解释正确的是？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -127,13 +134,13 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "hero['attack']", B: "hero.attack", C: "herro(attack)", D: "attack.hero"}
-  answer: B
+  options: {A: "hero.attack", B: "hero['attack']", C: "herro(attack)", D: "attack.hero"}
+  answer: A
   realm: oop
   template: 设类`Hero`中定义了方法`attack`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: subclass, B: extend, C: child, D: class}
+  options: {A: "`subclass`", B: "`extend`", C: "`child`", D: "`class`"}
   answer: D
   realm: oop
   template: 子类继承父类的关键字是;
@@ -145,25 +152,39 @@
   realm: import
   template: 下面哪个是Python导入包的关键字;
 
+# - !!python/object:exam.ChoiceProblem
+#   parameter: {}
+#   options: {A: "`import array`", B: "`import numpy as np`", C: "`from numpy import array`", D: "`from array import numpy`"}
+#   answer: C
+#   realm: import
+#   template: |
+#     同学安装了包`numpy`，他想直接在脚本中使用包中的变量`array`，那么正确的做法是;
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "`import array`", B: "`import numpy as np`", C: "`from numpy import array`", D: "`from array import numpy`"}
-  answer: B
+  options: {A: "直接使用BeautifulSoup", B: "`import bs4 as BeautifulSoup`", C: "`from bs4 import BeautifulSoup`", D: "`import BeautifulSoup` from bs4"}
+  answer: C
   realm: import
   template: |
-    同学用pip工具下载了包`numpy`，他想直接在脚本中使用包中的变量`array`，那么正确的做法是;
+    同学安装了包`bs4`，他想直接在脚本中使用包中的类`BeautifulSoup`，那么正确的做法是;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: 使用PIL, B: 使用Image, C: 为Image赋值, D: 为PIL赋值}
+  options: {A: 使用变量`PIL`, B: 使用变量`Image`, C: 为变量`Image`赋值, D: 为变量`PIL`赋值}
   answer: A
   realm: import
   template: |
-    通过`from PIL import Image`导入包之后，下面可以做的是;
+    通过`from PIL import Image`导入包之后，下面不可以做的是;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "`print('Hey, man')`", B: "`class = ['Apple', 'Orange', 'Banana']`", C: "`print=520`", D: "str(520)"}
-  answer: B
+  options: {A: "class=520", B: "`class_ = 520`", C: "`print=520`", D: "print(520)"}
+  answer: A
   realm: grammar
   template: 下面哪个是不合法的命令;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: Wifi, B: 接口对象, C: 套接字对象, D: 局域网}
+  answer: C
+  realm: web
+  template: 实现主机之间网络连接的标准方法是建立;

@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1766674554 "python-bank.tex" "python-bank.pdf" "python-bank" 1766674556
-  "/dev/null" 1766674545 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1768047257 "python-bank.tex" "python-bank.pdf" "python-bank" 1768047260
+  "/dev/null" 1768047255 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -123,9 +123,9 @@
   "/usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt" 1719576769 3519750 57b20ef4dc0fbd411dfb49cd4a5ccb3e ""
   "/usr/local/texlive/2016/texmf.cnf" 1719569212 602 3ed9fba4493354f5e25510020113f29f ""
   "/usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty" 1529054314 1685 4f6da10271a173a1d182ab0ac093abe2 ""
-  "python-bank.aux" 1766674556 90 9fb9578b464f0a61f1c394efc86e5531 ""
-  "python-bank.tex" 1766674552 10007 62db5bbf8e1a7aebeadea3ce7a1f98e8 ""
+  "python-bank.aux" 1768047259 90 749caa80a52d91a47ba150312556d0ef ""
+  "python-bank.tex" 1768047242 11584 9253c047ad5a6e098e701f4f01bd943a ""
   (generated)
+  "python-bank.aux"
   "python-bank.log"
   "python-bank.pdf"
-  "python-bank.aux"

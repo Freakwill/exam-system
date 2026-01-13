@@ -1,7 +1,7 @@
 - !!python/object:exam.CalculationProblem
   template: |
     下面是函数定义与调用代码. 请指出的所有Bug.
-
+    ```python
     def play(name, game='Royal Crash', time):
         # 定义函数play
         # 本程序用于调查学生玩游戏时间
@@ -18,10 +18,43 @@
 
     play(name='Mario', 'Pokemon', 3)   # 第一次调用
     play(0.5, game='CS, name='Steve')  # 第二次调用
+    ```
   answer: |
     1. time需要定义默认值；或者time在game前面
     2. if条件句后加":"
     3. 第一个 else 改为 elif
     4. 第一次调用中去掉"name=", 或者后面加上"game="和"time="
     5. 第二次调用把0.5写在最后
+  realm: Python
+
+
+- !!python/object:exam.CalculationProblem
+  template: |
+    下面是函数定义与调用代码. 请指出三处Bug.
+    ```python
+    function guess_price():
+        # 定义函数 guess_price
+        # 本程序用于实现一个多轮猜价格游戏
+
+        price = 50
+        guess_times = 0
+        while guess_times < 3:
+            guess = input("请输入你的猜测: ")
+            guess_times += 1
+            if guess = price:
+                print("恭喜你猜对了!")
+                return
+            elif guess > price:
+                print("你的猜测太高了.")
+            else:
+                print("你的猜测太低了.")
+        print("你已经用完了所有的猜测机会.")
+        print("正确的价格是:", price)
+
+    guess_price()  # 调用函数
+    ```
+  answer: |
+    1. 函数定义的关键词是def, 不是function
+    2. guess是字符串类型没有进行类型转换
+    3. if条件句中"="改为"=="
   realm: Python

@@ -107,4 +107,9 @@
   realm: import
   template: |
     只要文件夹的名称正常，并且在其中新建文件`__init__.py`，那么它就是Python包;
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: web
+  template: |
+    requests的get方法可以下载任何网站上的资源;
 

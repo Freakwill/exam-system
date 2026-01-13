@@ -13,244 +13,113 @@
 \usepackage{geometry}%
 \usepackage{listings}%
 \usepackage{ragged2e}%
-\usepackage{multirow}%
 %
 \geometry{left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm}%
 \pagestyle{fancy}%
-\chead{\textbf{人民大学{-}雁栖湖人工智能学院考试命题纸}}%
+\chead{\footnotesize{\textbf{人民大学{-}雁栖湖人工智能学院考试命题纸}}}%
 \cfoot{\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}}%
 \renewcommand{\headrulewidth}{0pt}%
 %
 \begin{document}%
 \begin{center}%
-\Large{\textbf{人民大学-雁栖湖人工智能学院第 2025/2026 学年\\第 1 学期试卷}}%
+\Large{\textbf{北京雁栖湖数学与人工智能学院2025-2026学年第一学期《Python程序设计》课程期末考试试卷（A卷）}}%
 \end{center}%
 \begin{center}%
-\begin{tabular}{lclclc}%
-课程&\multicolumn{2}{c}{\autolenunderline{\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}&班级&\multicolumn{2}{c}{\autolenunderline{\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}\\%
-姓名&\autolenunderline{}&学号（末2位）&\autolenunderline{}&教师姓名&\autolenunderline{}\\%
+\begin{tabular}{cccccc}%
+\textbf{考试形式：}&\multicolumn{2}{c}{($\square$闭卷/$\square$开卷)}&\multicolumn{3}{c}{}\\%
+姓名&\autolenunderline{}&学号&\autolenunderline{}&教师姓名&\autolenunderline{}\\%
 \end{tabular}%
 \end{center}%
-\begin{center}%
-\begin{tabular}{|c|c|c|c|c|c|}%
-\hline%
-\sws{题号}&\sws{一}&\sws{二}&\sws{三}&\sws{四}&\sws{总评}\\%
-\hline%
-\multirow{2}{*}{计分}&&&&&\\%
-&&&&&\\%
-\hline%
-\end{tabular}%
-\end{center}%
+\vskip 10pt%
 \thispagestyle{plain}%
-\noindent 一、填空题 (每空 2 分, 共 20 空):%
+\noindent%
+\textbf{一、填空题 (本题满分40分，每空 2 分, 共 20 空):}%
 \begin{enumerate}[1)]%
 \item%
-Python 的格言是 \autolenunderline{}, 我用 Python;%
-\item%
-说程序设计体现 Python 简洁明了的风格的形容词是\autolenunderline{};%
-\item%
-你要克服地心引力跨越大海飞向太空，为了实现这个梦想，你首先要下载具有该功能的\autolenunderline{} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用\autolenunderline{}关键字导入;
-%
-\item%
-"写出为变量greet赋值为字符串\verb|Hello, President|的语句: \autolenunderline{};"
-%
-\item%
-写出至少三种内建类型: \autolenunderline{}、\autolenunderline{}、\autolenunderline{};%
-\item%
-C 语言中的数组类似于 Python 中的$\autolenunderline{}$类型;%
-\item%
-C 语言中的结构体类似于 Python 中的$\autolenunderline{}$类型;%
-\item%
-视频和图像属于\autolenunderline{}文件，用\autolenunderline{}方法写入（保存或另存为），用\autolenunderline{}方法读取;%
-\item%
-Python脚本文件后缀是\autolenunderline{};%
-\item%
-如果函数没有返回语句，那么它默认范围: \autolenunderline{};%
-\item%
-匿名函数的关键字是: \autolenunderline{};%
-\item%
-循环语句中，Python 的控制命令有: \autolenunderline{}、\autolenunderline{};%
-\item%
-读取文件内容前，一般用\autolenunderline{}创建文件对象;%
-\item%
-文件操作结束时候要执行\autolenunderline{}命令;%
-\item%
-创建文件对象的常用语法糖是\autolenunderline{}语句;%
+Python 网络编程中堪称绝配的两个第三方库/模块: \autolenunderline{}、\autolenunderline{};%
 \item%
 定义方法的关键字是：\autolenunderline{};%
 \item%
-至少写出两个个你熟悉的标准方库: \autolenunderline{}、\autolenunderline{};%
+C 语言中的结构体类似于 Python 中的$\autolenunderline{}$类型;%
 \item%
-下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{}%
+创建文件对象的常用语法糖是\autolenunderline{}语句;%
 \item%
-Python 网络编程堪称绝配的两个第三方库: \autolenunderline{}、\autolenunderline{};%
+循环语句中，Python 的控制命令有: \autolenunderline{}、\autolenunderline{};%
+\item%
+如果函数没有返回语句，那么它默认返回: \autolenunderline{};%
+\item%
+连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{}、\autolenunderline{}两部分;%
+\item%
+Python 的格言是 \autolenunderline{}, 我用 Python;%
+\item%
+写出为变量greet赋值为字符串\verb|Hello, President|的语句: \autolenunderline{};
+%
 \end{enumerate}%
 
 
 %
-\noindent 二、判断题 (每空 2 分, 共 10 空):%
+\noindent%
+\textbf{二、判断题 (本题满分20分，每题 2 分, 共 10 题):}%
 \begin{enumerate}[1)]%
-\item%
-Python 比 C、Java 容易学;~~\mypar{}%
-\item%
-学习 Python 是一件非常快乐，非常有成就感的事情;~~\mypar{}%
-\item%
-def 符合标识符的文法，因此可作为变量名;
-~~\mypar{}%
-\item%
-Python 是一种动态类型面向对象的过程式解释型语言;~~\mypar{}%
-\item%
-相比传统计算机语言，Python 运行速度比较慢，但开发效率高;~~\mypar{}%
-\item%
-Python的布尔型其实是特殊的整型;~~\mypar{}%
-\item%
-对 Python 来说，缩进具有语法功能;~~\mypar{}%
-\item%
-Python 没有 goto 语句;~~\mypar{}%
-\item%
-Python 的 for/while 循环语句和 if 语句一样可以接 else;~~\mypar{}%
-\item%
-Python 有 do-while 语句;~~\mypar{}%
-\item%
-Python 有 case 语句;~~\mypar{}%
-\item%
-Python中没有函数指针的概念，函数的行为和普通变量是一样的;~~\mypar{}%
-\item%
-Python 中的函数不能作为另一个函数的参数或返回值;~~\mypar{}%
-\item%
-不能在Python 的函数内部操作全局变量;~~\mypar{}%
-\item%
-函数内部不能调用函数自身，否则会陷入无限循环;~~\mypar{}%
-\item%
-用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;~~\mypar{}%
-\item%
-用open函数打开文件得到的返回值是文件中的内容;~~\mypar{}%
-\item%
-如果要为某个类定义“+”方法，直接定义\verb|def +(self, other): pass|即可;
-~~\mypar{}%
-\item%
-类型\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可以像普通函数那样被直接访问;
-~~\mypar{}%
 \item%
 继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
 ~~\mypar{}%
 \item%
-定义类Animal之后, 用Animal()新建对象时，程序会自动调用方法\verb|__init__|;
-~~\mypar{}%
+Python中没有函数指针的概念，函数的行为和普通变量是一样的;~~\mypar{}%
+\item%
+Python 是一种动态类型面向对象的过程式解释型语言;~~\mypar{}%
+\item%
+Python 有 case 语句;~~\mypar{}%
+\item%
+用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;~~\mypar{}%
 \item%
 无论包\verb|mypackage|安装在哪里，\verb|import mypackage|都会自动搜索并导入该包;
 ~~\mypar{}%
 \item%
-命令\verb|from mypackage import foo|在导入包中的变量foo同时，也会导入包\verb|mypackage|自身;
-~~\mypar{}%
+对 Python 来说，缩进具有语法功能;~~\mypar{}%
 \item%
-只要文件夹的名称正常，并且在其中新建文件\verb|__init__.py|，那么它就是Python包;
+requests的get方法可以下载任何网站上的资源;
 ~~\mypar{}%
 \end{enumerate}%
 
 
 %
-\noindent 三、选择题 (每空 4 分, 共 10 空):%
+\noindent%
+\textbf{三、选择题 (本题满分40分，每题 4 分, 共 10 题):}%
 \begin{enumerate}[1)]%
-\item%
-Python 的吉祥物是;~~\mypar{}\\
-(A) 一只袋鼠~~(B) 一只企鹅~~(C) 一只章鱼~~(D) 一条蟒蛇%
-\item%
-Python发明人是在什么情况下发明Python的？~~\mypar{}\\
-(A) 内心迷茫的时候~~(B) 在实验室里专研~~(C) 度假时候无聊打发时间~~(D) 泡咖啡馆奇思妙想%
-\item%
-学习编程的第一个命令是？~~\mypar{}\\
-(A) Hello World~~(B) Hello Kitty~~(C) Hello Kugou~~(D) 你好世界%
-\item%
-下面哪个不能作为Python的变量？~~\mypar{}\\
-(A) print~~(B) int~~(C) CONSTANT~~(D) def%
-\item%
-下面哪个是可变变量的类型？~~\mypar{}\\
-(A) 字符串~~(B) 数字~~(C) 列表~~(D) 元组%
-\item%
-存储个人信息时，最适合采用什么数据类型？~~\mypar{}\\
-(A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
-\item%
-关于列表说法正确的是？~~\mypar{}\\
-(A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
-\item%
-文件操作完毕后，应该;~~\mypar{}\\
-(A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
-\item%
-下面哪个起到流程控制作用的关键字不是Python的关键字;~~\mypar{}\\
-(A) break~~(B) continue~~(C) return~~(D) goto%
-\item%
-for循环不能用于遍历什么类型的数据;~~\mypar{}\\
-(A) 元组~~(B) 字典~~(C) 整数~~(D) 字符串%
-\item%
-方法\verb|.item|常用与什么类型数据的遍历;~~\mypar{}\\
-(A) 元组~~(B) 字典~~(C) 列表~~(D) 字符串%
-\item%
-下面哪个是Python创建函数的关键字;~~\mypar{}\\
-(A) def~~(B) func~~(C) class~~(D) function%
-\item%
-定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
-~~\mypar{}\\
-(A) foo(1)~~(B) foo(1, 2, 3, 'hello')~~(C) foo(1, y=2, z='hello')~~(D) foo(y=3, 2, 3)%
-\item%
-下面哪个是Python创建类的关键字;~~\mypar{}\\
-(A) def~~(B) classdef~~(C) class~~(D) cls%
-\item%
-下面哪个是Python新建对象的关键字;~~\mypar{}\\
-(A) init~~(B) new~~(C) 没有关键字~~(D) cls%
-\item%
-设\verb|Card|是类名，card是其对象，则下述说法错误的是;~~\mypar{}\\
-(A) Card也是变量~~(B) Card可像函数一样调用~~(C) card的类型是Card~~(D) Card本身无类型%
 \item%
 下面哪个是Python初始化对象的方法;~~\mypar{}\\
 (A) \verb|__new__|~~(B) \verb|__init__|~~(C) \verb|_new_|~~(D) \verb|_init_|%
 \item%
-设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{}\\
-(A) hero['attack']~~(B) hero.attack~~(C) herro(attack)~~(D) attack.hero%
+存储个人信息时，最适合采用什么数据类型？~~\mypar{}\\
+(A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
 \item%
-子类继承父类的关键字是;~~\mypar{}\\
-(A) subclass~~(B) extend~~(C) child~~(D) class%
-\item%
-下面哪个是Python导入包的关键字;~~\mypar{}\\
-(A) \verb|include|~~(B) \verb|import|~~(C) \verb|export|~~(D) \verb|use|%
+下面哪个不能作为Python的变量？~~\mypar{}\\
+(A) print~~(B) int~~(C) CONSTANT~~(D) def%
 \item%
 同学用pip工具下载了包\verb|numpy|，他想直接在脚本中使用包中的变量\verb|array|，那么正确的做法是;
 ~~\mypar{}\\
 (A) \verb|import array|~~(B) \verb|import numpy as np|~~(C) \verb|from numpy import array|~~(D) \verb|from array import numpy|%
 \item%
-通过\verb|from PIL import Image|导入包之后，下面可以做的是;
-~~\mypar{}\\
-(A) 使用PIL~~(B) 使用Image~~(C) 为Image赋值~~(D) 为PIL赋值%
+下面哪个是Python创建函数的关键字;~~\mypar{}\\
+(A) def~~(B) func~~(C) class~~(D) function%
+\item%
+实现主机之间网络连接的标准方法是建立;~~\mypar{}\\
+(A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
+\item%
+下面哪个起到流程控制作用的关键字不是Python的关键字;~~\mypar{}\\
+(A) break~~(B) continue~~(C) return~~(D) goto%
+\item%
+Python 的吉祥物是;~~\mypar{}\\
+(A) 一只袋鼠~~(B) 一只企鹅~~(C) 一只章鱼~~(D) 一条蟒蛇%
 \item%
 下面哪个是不合法的命令;~~\mypar{}\\
 (A) \verb|print('Hey, man')|~~(B) \verb|class = ['Apple', 'Orange', 'Banana']|~~(C) \verb|print=520|~~(D) str(520)%
+\item%
+文件操作完毕后，应该;~~\mypar{}\\
+(A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
 \end{enumerate}%
 
 
 %
-\noindent 四、计算题 (每题 10 分, 共 2 题):%
-\begin{enumerate}[1)]%
-\item%
-下面是函数定义与调用代码. 请指出的所有Bug.
-\begin{lstlisting}[language=python]
-def play(name, game='Royal Crash', time):
-    # 定义函数play
-    # 本程序用于调查学生玩游戏时间
-
-    print('Student: ', name)
-    print(f'play {game} with {time} hours!')
-
-    if time > 3
-        print(f'{name} is a bad student.')
-    else time > 1:
-        print(f'Just so so.')
-    else:
-        print(f'Teachers will like {name}.')
-
-play(name='Mario', 'Pokemon', 3)   # 第一次调用
-play(0.5, game='CS, name='Steve')  # 第二次调用
-\end{lstlisting}
-
-\vspace{10cm}%
-\end{enumerate}%
 \end{document}

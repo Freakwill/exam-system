@@ -170,8 +170,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 INPUT python_exam.aux
@@ -214,13 +212,11 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
-INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT python_exam.aux

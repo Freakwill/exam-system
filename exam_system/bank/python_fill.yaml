@@ -7,15 +7,16 @@
   answer: {style: "pythonic"}
   realm: Python
 - !!python/object:exam.FillProblem
-  parameter: {dream: "克服地心引力跨越大海飞向太空"}
+  parameter: {dream: "乘坐马斯克的星舰飞向太空"}
   template: |
-    你要{{dream}}，为了实现这个梦想，你首先要下载具有该功能的{{third}} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
-  answer: {keyword: "import", third: "第三方库"}
+    为了实现“{{dream}}”的梦想，你应该首先用{{pip}}下载具有该功能的{{third}} (如"starship"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
+  answer: {keyword: "import", third: "第三方库", pip: pip}
   realm: Python
 - !!python/object:exam.FillProblem
   template: |
-    "写出为变量greet赋值为字符串`Hello, President`的语句: {{statement}};"
-  answer: {statement: "greet=\"Hello, President\""}
+    写出为变量{{x}}赋值为字符串`Hello, Professor`的语句: {{statement}};
+  parameter: {x: hello}
+  answer: {statement: "hello=\"Hello, Professor\""}
   realm: grammar
 - !!python/object:exam.FillProblem
   template: "写出至少三种内建类型: {{int}}、{{float}}、{{str}};"
@@ -30,16 +31,22 @@
   answer: {type: 'dict'}
   realm: type
 - !!python/object:exam.FillProblem
-  template: "视频和图像属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
-  answer: {type: "二进制", write: "wb", read: "rb"}
+  template: "{{file}}属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
+  parameter: {file: Python脚本}
+  answer: {type: "文本", write: "w", read: "r"}
   realm: file
+# - !!python/object:exam.FillProblem
+#   template: "{{file}}属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
+#   parameter: {file: Word文档}
+#   answer: {type: "二进制", write: "wb", read: "rb"}
+#   realm: file
 - !!python/object:exam.FillProblem
   template: "Python脚本文件后缀是{{ext}};"
   answer: {ext: ".py"}
   realm: file
 - !!python/object:exam.FillProblem
-  template: "如果函数没有返回语句，那么它默认范围: {{none}};"
-  answer: {none: "none"}
+  template: "如果函数没有返回语句，那么它默认返回: {{none}};"
+  answer: {none: "None"}
   realm: function
 - !!python/object:exam.FillProblem
   template: "匿名函数的关键字是: {{lambda}};"
@@ -61,12 +68,8 @@
   template: "创建文件对象的常用语法糖是{{with}}语句;"
   answer: {with: "with"}
   realm: file
-# - !!python/object:exam.FillProblem
-#   template: "面向对象编程的最高哲学是 {{doctrine}};"
-#   answer: {doctrine: "万事万物都是对象"}
-#   realm: OOP
 - !!python/object:exam.FillProblem
-  template: "定义方法的关键字是：{{keyword}};"
+  template: "定义类方法的关键字是：{{keyword}};"
   answer: {keyword: "def"}
   realm: OOP
 - !!python/object:exam.FillProblem
@@ -78,6 +81,14 @@
   answer: {import: "from numpy.random import rand"}
   realm: lib
 - !!python/object:exam.FillProblem
-  template: "Python 网络编程堪称绝配的两个第三方库: {{requests}}、{{bs4}};"
+  template: "Python 网络编程中堪称绝配的两个第三方库/模块: {{requests}}、{{bs4}};"
   answer: {requests: "requests", bs4: "bs4"}
   realm: lib
+- !!python/object:exam.FillProblem
+  template: "表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: {{status_code}};"
+  answer: {status_code: "200"}
+  realm: web
+- !!python/object:exam.FillProblem
+  template: "连接某个主机时，通常要先获得服务器的具体地址，包括{{ip}}、{{port}}两部分;"
+  answer: {ip: "IP地址", port: "端口号"}
+  realm: web

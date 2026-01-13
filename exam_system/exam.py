@@ -13,7 +13,6 @@ import collections
 import pathlib
 import datetime
 import copy
-import random
 import yaml
 
 import numpy as np
@@ -25,6 +24,7 @@ from pylatex.utils import *
 import pylatex_ext
 
 from base import *
+import problem_selection
 
 from config import *
 
@@ -62,8 +62,8 @@ class ExamPaper(pylatex_ext.XeDocument):
 
         self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
         self.preamble.append(Command('pagestyle', 'fancy'))
-        self.preamble.append(Command('chead', NoEscape(Command('textbf', f'{COLLEGE}考试命题纸').dumps())))
-        self.preamble.append(Command('cfoot', NoEscape(r'\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}')))
+        self.preamble.append(Command('chead', NoEscape(Command('footnotesize', bold(f'{COLLEGE}考试命题纸')).dumps())))
+        self.preamble.append(Command('cfoot', NoEscape(Command('footnotesize', NoEscape(r'第~\thepage~页~(共~\pageref{LastPage}~页)')).dumps())))
         self.preamble.append(Command('renewcommand', arguments=Arguments(NoEscape(r'\headrulewidth'), '0pt')))
 
         # header = PageStyle("header")      
@@ -97,7 +97,7 @@ class ExamPaper(pylatex_ext.XeDocument):
         table = Tabular('lclclc')
         table.escape = False
         table.add_row(('课程', MultiColumn(2, data=line2), '班级', MultiColumn(2, data=line2)))
-        table.add_row(('姓名', line, '学号（末2位）', line, '教师姓名', line))
+        table.add_row(('姓名', line, '学号', line, '教师姓名', line))
 
         mark_table = Tabular('|c|c|c|c|c|c|')
         mark_table.escape = False
@@ -178,21 +178,10 @@ class ExamPaper(pylatex_ext.XeDocument):
             p.solution = None
 
 
-def choice(problems, n=1, excluded=True):
-    ret = []
-    for _ in range(n):
-        if problems:
-            p = random.choice(problems)
-            problems.remove(p)
-            if excluded:
-                problems = [problem for problem in problems if problem.realm !=p.realm]
-            ret.append(p)
-    return ret
-
-
 class Problem(BaseTemplate):
     # Problem class
-    def __init__(self, template='', answer={}, realm=None, solution=None):
+
+    def __init__(self, template='', parameter={}, answer={}, realm=None, solution=None):
         """Initialize a problem
         
         Keyword Arguments:
@@ -210,10 +199,10 @@ class Problem(BaseTemplate):
         self.solution = solution
 
     @classmethod
-    def random(cls, filename, n=1, *args, **kwargs):
+    def random(cls, filename, n=1, strategy='rand', *args, **kwargs):
         # read n problems from yaml files (randomly)
         problems = cls.read_yaml(filename, *args, **kwargs)
-        return choice(problems, n)
+        return getattr(problem_selection, strategy)(problems, n)
 
     @classmethod
     def read_yaml(cls, filename, *args, **kwargs):
@@ -326,6 +315,7 @@ class ChoiceProblem(OtherProblem):
 
 
 class FillProblem(OtherProblem):
+
     mask = Command('autolenunderline', '')
 
     def __setstate__(self, state):

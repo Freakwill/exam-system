@@ -3,6 +3,34 @@
 import re
 
 
+class Plugin:
+
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        return self.func(*args, **kwargs)
+
+    def __imatmul__(self, cls):
+        def t(obj):
+            obj.convert(self.func)
+            obj.template_convert(self.func)
+            return obj
+
+        _old = cls.read_yaml
+        def _read_yaml(*args, **kwargs):
+            return [t(p) for p in _old(*args, **kwargs)]
+
+        cls.read_yaml = _read_yaml
+        return cls
+
+    def __matmul__(self, cls):
+        return self.__imatmul__(cls)
+
+    def __rmatmul__(self, cls):
+        return self.__matmul__(cls)
+
+
 def keep(f):
 
     def _f(text):
@@ -13,6 +41,7 @@ def keep(f):
     return _f
 
 
+@Plugin
 @keep
 def replace_backticks_with_verb(text):
     # Use regular expression to find substrings surrounded by backticks
@@ -20,6 +49,7 @@ def replace_backticks_with_verb(text):
     replaced_text = re.sub(pattern, r'\\verb|\1|', text)
     return replaced_text
 
+@Plugin
 @keep
 def replace_backticks_with_listing(text):
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  25 DEC 2025 22:55
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  10 JAN 2026 20:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,7 +1329,29 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen192
 \Gm@layoutvoffset=\dimen193
 \Gm@dimlist=\toks28
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count156
+\lst@gtempboxa=\box56
+\lst@token=\toks29
+\lst@length=\count157
+\lst@currlwidth=\dimen194
+\lst@column=\count158
+\lst@pos=\count159
+\lst@lostspace=\dimen195
+\lst@width=\dimen196
+\lst@newlines=\count160
+\lst@lineno=\count161
+\lst@maxwidth=\dimen197
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count162
+\lst@skipnumbers=\count163
+\lst@framebox=\box57
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 \CenteringLeftskip=\skip75
 \RaggedLeftLeftskip=\skip76
@@ -1346,30 +1368,8 @@ Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 \RaggedRightParindent=\skip87
 \JustifyingParindent=\skip88
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen194
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count156
-\lst@gtempboxa=\box56
-\lst@token=\toks29
-\lst@length=\count157
-\lst@currlwidth=\dimen195
-\lst@column=\count158
-\lst@pos=\count159
-\lst@lostspace=\dimen196
-\lst@width=\dimen197
-\lst@newlines=\count160
-\lst@lineno=\count161
-\lst@maxwidth=\dimen198
-(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count162
-\lst@skipnumbers=\count163
-\lst@framebox=\box57
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
-(/usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+\bigstrutjot=\dimen198
+) (/usr/local/texlive/2016/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2016/05/14 v3.4.0 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count164
 \l__xeCJK_listings_flag_int=\count165
@@ -1509,7 +1509,12 @@ ident \EU1/FandolSong-Regular(0)/m/n/12 的 语 句\T1/lmr/m/n/12 : $[]$;"
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 101.
+Overfull \hbox (14.41075pt too wide) in paragraph at lines 91--92
+[]\EU1/FandolSong-Regular(0)/m/n/12 连 接 某 个 主 机 时，|  通 常 要 先 获 得 服 务 器 的 具 体 地 
+址，|  包 括$[]$、| $[]$
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 105.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1521,7 +1526,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Overfull \hbox (6.04199pt too wide) in paragraph at lines 139--142
+Overfull \hbox (6.04199pt too wide) in paragraph at lines 143--146
 []\EU1/FandolSong-Regular(0)/m/n/12 定 义 类 \T1/lmr/m/n/12 An-i-mal \EU1/FandolSo
 ng-Regular(0)/m/n/12 之 后\T1/lmr/m/n/12 , \EU1/FandolSong-Regular(0)/m/n/12 用 \T
 1/lmr/m/n/12 An-i-mal() \EU1/FandolSong-Regular(0)/m/n/12 新 建 对 象 时，|  程 序 会 自 
@@ -1529,7 +1534,7 @@ ng-Regular(0)/m/n/12 之 后\T1/lmr/m/n/12 , \EU1/FandolSong-Regular(0)/m/n/12 �
  []
 
 
-Overfull \hbox (14.83086pt too wide) in paragraph at lines 148--150
+Overfull \hbox (14.83086pt too wide) in paragraph at lines 152--155
 []\EU1/FandolSong-Regular(0)/m/n/12 只 要 文 件 夹 的 名 称 正 常，|  并 且 在 其 中 新 建 文 件[]\
 T1/lmtt/m/n/12 __init__.py\EU1/FandolSong-Regular(0)/m/n/12 ，|  那 么 它 就 是 \T1/l
 mr/m/n/12 Python
@@ -1542,7 +1547,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (2.25104pt too wide) in paragraph at lines 203--206
+Overfull \hbox (2.25104pt too wide) in paragraph at lines 213--216
 \T1/lmr/m/n/12 (A) Card \EU1/FandolSong-Regular(0)/m/n/12 也 是 变 量  \T1/lmr/m/n/
 12 (B) Card \EU1/FandolSong-Regular(0)/m/n/12 可 像 函 数 一 样 调 用  \T1/lmr/m/n/12 (
 C) card \EU1/FandolSong-Regular(0)/m/n/12 的 类 型 是 \T1/lmr/m/n/12 Card  (D)
@@ -1555,14 +1560,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (28.51408pt too wide) in paragraph at lines 218--222
+Overfull \hbox (28.51408pt too wide) in paragraph at lines 228--232
 \T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 import array  \T1/lmr/m/n/12 (B) []\T1/lmt
 t/m/n/12 import numpy as np  \T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 from numpy im
 port array  \T1/lmr/m/n/12 (D)
  []
 
 
-Overfull \hbox (8.7445pt too wide) in paragraph at lines 226--228
+Overfull \hbox (8.7445pt too wide) in paragraph at lines 236--239
 \T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 print('Hey, man')  \T1/lmr/m/n/12 (B) []\T
 1/lmtt/m/n/12 class = ['Apple', 'Orange', 'Banana']  \T1/lmr/m/n/12 (C)
  []
@@ -1576,16 +1581,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] 
+[5]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6] 
 AED: lastpage setting LastPage
-(./python-bank.aux) ) 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7] (./python-bank.aux) ) 
 Here is how much of TeX's memory you used:
- 23840 strings out of 493591
- 476566 string characters out of 6143546
- 470276 words of memory out of 10000000
- 26971 multiletter control sequences out of 15000+600000
+ 23845 strings out of 493591
+ 476631 string characters out of 6143546
+ 468437 words of memory out of 10000000
+ 26976 multiletter control sequences out of 15000+600000
  39903 words of font info for 59 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,10n,77p,10442b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,77p,10442b,1936s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on python-bank.pdf (5 pages).
+Output written on python-bank.pdf (7 pages).
