@@ -4,7 +4,7 @@ from exam import *
 from plugin import *
 
 
-n_fill = 15
+n_fill = 20
 n_choice = 10
 n_truefalse = 10
 
@@ -29,7 +29,7 @@ class PythonExamPaper(ExamPaper):
         # mark_table.add_hline()
         self.append(Center(data=table))
         # self.append(Center(data=mark_table))
-        self.append(Command('vskip', '10pt'))
+        self.append(Command('vspace', '10pt'))
         self.append(Command('thispagestyle', 'plain'))
 
     def make_fill(self):
@@ -62,7 +62,7 @@ class PythonExamPaper(ExamPaper):
 paper = PythonExamPaper(title="北京雁栖湖数学与人工智能学院2025-2026学年第一学期《Python程序设计》课程期末考试试卷（A卷）")
 
 paper.calculation = []
-paper.fill = (FillProblem@ replace_backticks_with_verb).random(filename='python_fill', n=n_fill)
+paper.fill = (FillProblem@ (replace_backticks_with_listing + replace_backticks_with_verb)).random(filename='python_fill', n=n_fill)
 paper.truefalse = (TrueFalseProblem @ replace_backticks_with_verb).random(filename='python_truefalse', n=n_truefalse)
 paper.choice = (ChoiceProblem@ replace_backticks_with_verb).random(filename='python_choice', n=n_choice) 
 paper.build()

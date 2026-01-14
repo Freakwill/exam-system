@@ -57,10 +57,55 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
+  options:
+    A: |
+      `card.number=3`
+    B: |
+      `card["number"]="A"` 
+    C: |
+      `card[3]=card["number"]`
+    D: |
+      `card["suit"]=input()`
+  answer: A
+  realm: programming
+  template: 下面关于字典`card={"number":3, "suit":"club"}`的使用（语法上）错误的是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options:
+    A: |
+      `students.append("Mike, Lucy")`
+    B: |
+      `students.append("Mike"); students.append("Lucy")` 
+    C: |
+      `students.extend("Mike", "Lucy")`
+    D: |
+      `students + ["Mike", "Lucy"]`
+  answer: B
+  realm: programming
+  template: 为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
   options: {A: 列表中的元素不能再是列表, B: 列表中的元素不能是元组, C: 列表中的元素类型必须相同, D: 在表示数据方面，列表和元组没有明显区别}
   answer: D
   realm: programming
   template: 关于列表说法正确的是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options:
+    A: |
+      `x="League of Legends"; print(x)`
+    B: |
+      `x=["League of Legends"]; x.append("Honor of Kings")` 
+    C: |
+      `x=["League of Legends"]; x += ["Honor of Kings"]`
+    D: |
+      `x="League of Legends"; x += "Honor of Kings"`
+  answer: D
+  realm: programming
+  template: 下面那个命令会导致变量id的变化？
 
 - !!python/object:exam.ChoiceProblem
   options: {A: 直接退出程序, B: 关机, C: 拔电源, D: 关闭文件对象}
@@ -161,11 +206,11 @@
 #     同学安装了包`numpy`，他想直接在脚本中使用包中的变量`array`，那么正确的做法是;
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "直接使用BeautifulSoup", B: "`import bs4 as BeautifulSoup`", C: "`from bs4 import BeautifulSoup`", D: "`import BeautifulSoup` from bs4"}
+  options: {A: "无需导入直接使用BeautifulSoup", B: "`import bs4 as BeautifulSoup`", C: "`from bs4 import BeautifulSoup`", D: "`import BeautifulSoup` from bs4"}
   answer: C
   realm: import
   template: |
-    同学安装了包`bs4`，他想直接在脚本中使用包中的类`BeautifulSoup`，那么正确的做法是;
+    安装包`bs4`后，用户想直接在脚本中使用包中的类`BeautifulSoup`，那么应该先做什么;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}

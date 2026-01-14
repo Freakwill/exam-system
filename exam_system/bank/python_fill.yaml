@@ -9,7 +9,7 @@
 - !!python/object:exam.FillProblem
   parameter: {dream: "乘坐马斯克的星舰飞向太空"}
   template: |
-    为了实现“{{dream}}”的梦想，你应该首先用{{pip}}下载具有该功能的{{third}} (如"starship"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
+    为了实现“{{dream}}”的梦想，用户可先用{{pip}}下载具有该功能的{{third}} (如`starship`), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
   answer: {keyword: "import", third: "第三方库", pip: pip}
   realm: Python
 - !!python/object:exam.FillProblem
@@ -19,9 +19,18 @@
   answer: {statement: "hello=\"Hello, Professor\""}
   realm: grammar
 - !!python/object:exam.FillProblem
+  template: |
+    运算符{{operator}}可以将多个字符串拼接起来;
+  answer: {operator: +}
+  realm: grammar
+- !!python/object:exam.FillProblem
   template: "写出至少三种内建类型: {{int}}、{{float}}、{{str}};"
   answer: {int: "int", float: "float", str: "str"}
   realm: type
+# - !!python/object:exam.FillProblem
+#   template: "写出至少三种内建变量/函数: {{print}}、{{open}}、{{input}};"
+#   answer: {print: "print", open: "open", input: "input"}
+#   realm: type
 - !!python/object:exam.FillProblem
   template: "C 语言中的数组类似于 Python 中的${{type}}$类型;"
   answer: {type: 'list'}
@@ -31,15 +40,20 @@
   answer: {type: 'dict'}
   realm: type
 - !!python/object:exam.FillProblem
+  template: "程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：{{rel_path}}、{{abs_path}};"
+  parameter: {file: Python脚本}
+  answer: {rel_path: "../huairou/bimsa.txt", abs_path: "/beijing/huairou/bimsa.txt"}
+  realm: path
+- !!python/object:exam.FillProblem
   template: "{{file}}属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
   parameter: {file: Python脚本}
   answer: {type: "文本", write: "w", read: "r"}
   realm: file
-# - !!python/object:exam.FillProblem
-#   template: "{{file}}属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
-#   parameter: {file: Word文档}
-#   answer: {type: "二进制", write: "wb", read: "rb"}
-#   realm: file
+- !!python/object:exam.FillProblem
+  template: "{{file}}属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
+  parameter: {file: Word文档}
+  answer: {type: "二进制", write: "wb", read: "rb"}
+  realm: file
 - !!python/object:exam.FillProblem
   template: "Python脚本文件后缀是{{ext}};"
   answer: {ext: ".py"}
@@ -49,8 +63,16 @@
   answer: {none: "None"}
   realm: function
 - !!python/object:exam.FillProblem
-  template: "匿名函数的关键字是: {{lambda}};"
-  answer: {lambda: "lambda"}
+  template: "函数返回语句的关键字是: {{keyword}};"
+  answer: {keyword: "return"}
+  realm: function
+- !!python/object:exam.FillProblem
+  template: "定义函数的关键字是: {{keyword}};"
+  answer: {keyword: "def"}
+  realm: function
+- !!python/object:exam.FillProblem
+  template: "匿名函数的关键字是: {{keyword}};"
+  answer: {keyword: "lambda"}
   realm: function
 - !!python/object:exam.FillProblem
   template: "循环语句中，Python 的控制命令有: {{break}}、{{continue}};"
@@ -73,7 +95,7 @@
   answer: {keyword: "def"}
   realm: OOP
 - !!python/object:exam.FillProblem
-  template: "至少写出两个个你熟悉的标准方库: {{lib1}}、{{lib2}};"
+  template: "至少写出两个你熟悉的标准库: {{lib1}}、{{lib2}};"
   answer: {lib1: "os", lib2: "pathlib"}
   realm: lib
 - !!python/object:exam.FillProblem
@@ -81,9 +103,15 @@
   answer: {import: "from numpy.random import rand"}
   realm: lib
 - !!python/object:exam.FillProblem
-  template: "Python 网络编程中堪称绝配的两个第三方库/模块: {{requests}}、{{bs4}};"
-  answer: {requests: "requests", bs4: "bs4"}
+  template: "Python 网络爬虫中堪称绝配的两个第三方库/模块: {{requests}}、{{bs4}};"
+  answer: {requests: "`requests`", bs4: "`bs4`"}
   realm: lib
+# - !!python/object:exam.FillProblem
+#   template: "如何用requests访问人大官网主页（https://www.ruc.edu.cn）: {{cmd}};"
+#   answer: 
+#     cmd: |
+#       `requests.get("https://www.ruc.edu.cn")`
+#   realm: web
 - !!python/object:exam.FillProblem
   template: "表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: {{status_code}};"
   answer: {status_code: "200"}
@@ -92,3 +120,16 @@
   template: "连接某个主机时，通常要先获得服务器的具体地址，包括{{ip}}、{{port}}两部分;"
   answer: {ip: "IP地址", port: "端口号"}
   realm: web
+- !!python/object:exam.FillProblem
+  template: |
+    下面代码打印出的结果是{{result}};
+    ```python
+    x = "Hello"
+    def f():
+         x = "Nihao"
+    f()
+    print(x)
+    ```
+  answer: {result: "Hello"}
+  realm: programming
+

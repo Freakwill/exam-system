@@ -5,16 +5,14 @@ import re
 
 class Plugin:
 
-    def __init__(self, func):
-        self.func = func
-
-    def __call__(self, *args, **kwargs):
-        return self.func(*args, **kwargs)
+    def __init__(self, *functions):
+        self.functions = functions
 
     def __imatmul__(self, cls):
         def t(obj):
-            obj.convert(self.func)
-            obj.template_convert(self.func)
+            for f in self.functions:
+                obj.convert(f)
+                obj.template_convert(f)
             return obj
 
         _old = cls.read_yaml
@@ -29,6 +27,18 @@ class Plugin:
 
     def __rmatmul__(self, cls):
         return self.__matmul__(cls)
+
+    def __iadd__(self, other):
+        if isinstance(other, Plugin):
+            self.functions += other.functions
+        else:
+            self.functions += (other,)
+        return self
+
+    def __add__(self, other):
+        import copy
+        self += other
+        return copy.deepcopy(self)
 
 
 def keep(f):

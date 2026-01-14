@@ -30,30 +30,47 @@
 姓名&\autolenunderline{}&学号&\autolenunderline{}&教师姓名&\autolenunderline{}\\%
 \end{tabular}%
 \end{center}%
-\vskip 10pt%
+\vspace{10pt}%
 \thispagestyle{plain}%
 \noindent%
 \textbf{一、填空题 (本题满分40分，每空 2 分, 共 20 空):}%
 \begin{enumerate}[1)]%
 \item%
-Python 网络编程中堪称绝配的两个第三方库/模块: \autolenunderline{}、\autolenunderline{};%
+Python脚本文件后缀是\autolenunderline{};%
 \item%
-定义方法的关键字是：\autolenunderline{};%
+说程序设计体现 Python 简洁明了的风格的形容词是\autolenunderline{};%
 \item%
-C 语言中的结构体类似于 Python 中的$\autolenunderline{}$类型;%
+表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: \autolenunderline{};%
 \item%
-创建文件对象的常用语法糖是\autolenunderline{}语句;%
+下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{}%
 \item%
-循环语句中，Python 的控制命令有: \autolenunderline{}、\autolenunderline{};%
+写出为变量hello赋值为字符串\verb|Hello, Professor|的语句: \autolenunderline{};
+%
 \item%
 如果函数没有返回语句，那么它默认返回: \autolenunderline{};%
 \item%
-连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{}、\autolenunderline{}两部分;%
-\item%
 Python 的格言是 \autolenunderline{}, 我用 Python;%
 \item%
-写出为变量greet赋值为字符串\verb|Hello, President|的语句: \autolenunderline{};
+写出至少三种内建类型: \autolenunderline{}、\autolenunderline{}、\autolenunderline{};%
+\item%
+Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderline{}、\autolenunderline{};%
+\item%
+定义类方法的关键字是：\autolenunderline{};%
+\item%
+循环语句中，Python 的控制命令有: \autolenunderline{}、\autolenunderline{};%
+\item%
+下面代码打印出的结果是\autolenunderline{};
+\begin{lstlisting}[language=python]
+x = "Hello"
+def f():
+     x = "Nihao"
+f()
+print(x)
+
+\end{lstlisting}
 %
+\item%
+程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{}、\autolenunderline{};%
 \end{enumerate}%
 
 
@@ -62,24 +79,29 @@ Python 的格言是 \autolenunderline{}, 我用 Python;%
 \textbf{二、判断题 (本题满分20分，每题 2 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
+对 Python 来说，缩进具有语法功能;~~\mypar{}%
+\item%
 继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
 ~~\mypar{}%
-\item%
-Python中没有函数指针的概念，函数的行为和普通变量是一样的;~~\mypar{}%
-\item%
-Python 是一种动态类型面向对象的过程式解释型语言;~~\mypar{}%
-\item%
-Python 有 case 语句;~~\mypar{}%
-\item%
-用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;~~\mypar{}%
 \item%
 无论包\verb|mypackage|安装在哪里，\verb|import mypackage|都会自动搜索并导入该包;
 ~~\mypar{}%
 \item%
-对 Python 来说，缩进具有语法功能;~~\mypar{}%
-\item%
-requests的get方法可以下载任何网站上的资源;
+lambda 符合标识符的文法，因此可作为变量名;
 ~~\mypar{}%
+\item%
+Python 有 case 语句;~~\mypar{}%
+\item%
+requests的get方法可以不受限制地访问任何网站并下载其上的资源;
+~~\mypar{}%
+\item%
+Python 的 \verb|for/while| 循环语句和 \verb|if| 语句一样可以接 \verb|else|;~~\mypar{}%
+\item%
+用open函数打开文件得到的返回值是文件中的内容;~~\mypar{}%
+\item%
+不能在Python 的函数内部操作全局变量;~~\mypar{}%
+\item%
+函数内部不能调用函数自身，否则会陷入无限循环;~~\mypar{}%
 \end{enumerate}%
 
 
@@ -88,36 +110,45 @@ requests的get方法可以下载任何网站上的资源;
 \textbf{三、选择题 (本题满分40分，每题 4 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
-下面哪个是Python初始化对象的方法;~~\mypar{}\\
-(A) \verb|__new__|~~(B) \verb|__init__|~~(C) \verb|_new_|~~(D) \verb|_init_|%
-\item%
-存储个人信息时，最适合采用什么数据类型？~~\mypar{}\\
-(A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
-\item%
-下面哪个不能作为Python的变量？~~\mypar{}\\
-(A) print~~(B) int~~(C) CONSTANT~~(D) def%
-\item%
-同学用pip工具下载了包\verb|numpy|，他想直接在脚本中使用包中的变量\verb|array|，那么正确的做法是;
-~~\mypar{}\\
-(A) \verb|import array|~~(B) \verb|import numpy as np|~~(C) \verb|from numpy import array|~~(D) \verb|from array import numpy|%
-\item%
-下面哪个是Python创建函数的关键字;~~\mypar{}\\
-(A) def~~(B) func~~(C) class~~(D) function%
-\item%
-实现主机之间网络连接的标准方法是建立;~~\mypar{}\\
-(A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
-\item%
 下面哪个起到流程控制作用的关键字不是Python的关键字;~~\mypar{}\\
 (A) break~~(B) continue~~(C) return~~(D) goto%
 \item%
-Python 的吉祥物是;~~\mypar{}\\
-(A) 一只袋鼠~~(B) 一只企鹅~~(C) 一只章鱼~~(D) 一条蟒蛇%
+学习编程的第一个命令是？~~\mypar{}\\
+(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey dude%
 \item%
-下面哪个是不合法的命令;~~\mypar{}\\
-(A) \verb|print('Hey, man')|~~(B) \verb|class = ['Apple', 'Orange', 'Banana']|~~(C) \verb|print=520|~~(D) str(520)%
+下面关于字典\verb|card={"number":3, "suit":"club"}|的使用（语法上）错误的是？~~\mypar{}\\
+(A) \verb|card.number=3|
+~~(B) \verb|card["number"]="A"| 
+~~(C) \verb|card[3]=card["number"]|
+~~(D) \verb|card["suit"]=input()|
+%
+\item%
+方法\verb|.item|常用与什么类型数据的遍历;~~\mypar{}\\
+(A) 元组~~(B) 字典~~(C) 列表~~(D) 字符串%
+\item%
+定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
+~~\mypar{}\\
+(A) foo(1)~~(B) foo(1, 2, 3, 'hello')~~(C) foo(1, y=2, z='hello')~~(D) foo(y=3, 2, 3)%
 \item%
 文件操作完毕后，应该;~~\mypar{}\\
 (A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
+\item%
+Python发明人是在什么情况下发明Python的？~~\mypar{}\\
+(A) 内心迷茫的时候~~(B) 在实验室里专研~~(C) 度假时候无聊打发时间~~(D) 泡咖啡馆奇思妙想%
+\item%
+设\verb|Card|是类名，card是其对象，则下述说法错误的是;~~\mypar{}\\
+(A) Card也是变量~~(B) Card可像函数一样调用~~(C) card的类型是Card~~(D) Card本身无类型%
+\item%
+为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{}\\
+(A) \verb|students.append("Mike, Lucy")|
+~~(B) \verb|students.append("Mike"); students.append("Lucy")| 
+~~(C) \verb|students.extend("Mike", "Lucy")|
+~~(D) \verb|students + ["Mike", "Lucy"]|
+%
+\item%
+安装包\verb|bs4|后，用户想直接在脚本中使用包中的类\verb|BeautifulSoup|，那么应该先做什么;
+~~\mypar{}\\
+(A) 无需导入直接使用BeautifulSoup~~(B) \verb|import bs4 as BeautifulSoup|~~(C) \verb|from bs4 import BeautifulSoup|~~(D) \verb|import BeautifulSoup| from bs4%
 \end{enumerate}%
 
 

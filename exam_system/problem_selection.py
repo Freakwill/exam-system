@@ -2,14 +2,14 @@
 
 import random
 
-def rand(problems, n=1, excluded=True):
+def rand(problems, n=1, excluded=True, rate=0.25):
     ret = []
     for _ in range(n):
         if problems:
             p = random.choice(problems)
             problems.remove(p)
             if excluded:
-                problems = [problem for problem in problems if problem.realm !=p.realm]
+                problems = [problem for problem in problems if problem.realm != p.realm or random.random()<rate]
             ret.append(p)
     return ret
 

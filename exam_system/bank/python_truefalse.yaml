@@ -9,7 +9,7 @@
 - !!python/object:exam.TrueFalseProblem
   answer: false
   realm: Python
-  parameter: {keyword: def}
+  parameter: {keyword: lambda}
   template: |
     {{keyword}} 符合标识符的文法，因此可作为变量名;
 - !!python/object:exam.TrueFalseProblem
@@ -38,12 +38,22 @@
   template: "Python 没有 goto 语句;"
 - !!python/object:exam.TrueFalseProblem
   answer: true
+  realm: type
+  template: "{{type}}的值一旦改变（比如接上其他字符串）其id一定改变"
+  parameter: {type: 字符串}
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: type
+  template: "{{type}}的值一旦改变（比如接上其他{{type}}）其id一定改变"
+  parameter: {type: 列表}
+- !!python/object:exam.TrueFalseProblem
+  answer: true
   realm: structured
-  template: "Python 的 for/while 循环语句和 if 语句一样可以接 else;"
+  template: "Python 的 `for/while` 循环语句和 `if` 语句一样可以接 `else`;"
 - !!python/object:exam.TrueFalseProblem
   answer: false
   realm: structured
-  template: "Python 有 do-while 语句;"
+  template: "Python 有 `do-while` 语句;"
 - !!python/object:exam.TrueFalseProblem
   answer: false
   realm: structured
@@ -106,10 +116,10 @@
   answer: true
   realm: import
   template: |
-    只要文件夹的名称正常，并且在其中新建文件`__init__.py`，那么它就是Python包;
+    只要文件夹的名称正常，并且在其中创建文件`__init__.py`，那么它就是Python包;
 - !!python/object:exam.TrueFalseProblem
   answer: false
   realm: web
   template: |
-    requests的get方法可以下载任何网站上的资源;
+    requests的get方法可以不受限制地访问任何网站并下载其上的资源;
 
