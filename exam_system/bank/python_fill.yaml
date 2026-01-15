@@ -24,6 +24,11 @@
   answer: {operator: +}
   realm: grammar
 - !!python/object:exam.FillProblem
+  template: |
+    Python中进行幂运算的运算符是{{operator}};
+  answer: {operator: "**"}
+  realm: grammar
+- !!python/object:exam.FillProblem
   template: "写出至少三种内建类型: {{int}}、{{float}}、{{str}};"
   answer: {int: "int", float: "float", str: "str"}
   realm: type
@@ -99,7 +104,7 @@
   answer: {lib1: "os", lib2: "pathlib"}
   realm: lib
 - !!python/object:exam.FillProblem
-  template: "下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: {{import}}"
+  template: "下载第三方库`numpy`, 库中有子模块`random`, 子模块中定义了函数`rand`; 如何直接导入`rand`: {{import}}"
   answer: {import: "from numpy.random import rand"}
   realm: lib
 - !!python/object:exam.FillProblem
@@ -107,7 +112,7 @@
   answer: {requests: "`requests`", bs4: "`bs4`"}
   realm: lib
 # - !!python/object:exam.FillProblem
-#   template: "如何用requests访问人大官网主页（https://www.ruc.edu.cn）: {{cmd}};"
+#   template: "用requests访问人大官网主页（https://www.ruc.edu.cn）的命令是: {{cmd}};"
 #   answer: 
 #     cmd: |
 #       `requests.get("https://www.ruc.edu.cn")`

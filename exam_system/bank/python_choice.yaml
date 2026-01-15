@@ -22,24 +22,10 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: 打印Hello World, B: 打印Hello Kitty, C: 打印Hello Kugou, D: 打印Hey dude}
-  answer: A
-  realm: programming
-  template: 学习编程的第一个命令是？
-
-- !!python/object:exam.ChoiceProblem
-  parameter: {}
   options: {A: print, B: int, C: CONSTANT, D: def}
   answer: D
-  realm: programming
+  realm: grammar
   template: 下面哪个不能作为Python的变量？
-
-- !!python/object:exam.ChoiceProblem
-  parameter: {}
-  options: {A: 字符串, B: 数字, C: 列表, D: 元组}
-  answer: C
-  realm: programming
-  template: 下面哪个是可变变量的类型？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -54,6 +40,20 @@
   answer: B
   realm: type
   template: 关于内建变量解释正确的是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 打印Hello World, B: 打印Hello Kitty, C: 打印Hello Kugou, D: 打印Hey man}
+  answer: A
+  realm: programming
+  template: 学习编程的第一个命令是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 字符串, B: 数字, C: 列表, D: 元组}
+  answer: C
+  realm: programming
+  template: 下面哪个是可变变量的类型？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -83,7 +83,7 @@
       `students + ["Mike", "Lucy"]`
   answer: B
   realm: programming
-  template: 为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？
+  template: 为学生名单列表`students`增加两位新同学"Mike"和"Lucy"，可行的命令是？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -106,6 +106,21 @@
   answer: D
   realm: programming
   template: 下面那个命令会导致变量id的变化？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options:
+    A: |
+      `cmd = cmd[0]; args = cmd[1:]`
+    B: |
+      `args = cmd[1:]; cmd = cmd[0]` 
+    C: |
+      `cmd, *args = cmd`
+    D: |
+      `cmd, args = cmd`
+  answer: D
+  realm: grammar
+  template: 将列表`cmd=["pip", "install", "pygame"]`拆分为`cmd="pip"`, `args=["install, "pygame"]`两部分，最便捷的有效方法是？
 
 - !!python/object:exam.ChoiceProblem
   options: {A: 直接退出程序, B: 关机, C: 拔电源, D: 关闭文件对象}
@@ -132,7 +147,7 @@
   options: {A: 元组, B: 字典, C: 列表, D: 字符串}
   answer: B
   realm: type
-  template: 方法`.item`常用与什么类型数据的遍历;
+  template: 方法`.items`常用与什么类型数据的遍历;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -143,7 +158,7 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "foo(1)", B: "foo(1, 2, 3, 'hello')", C: "foo(1, y=2, z='hello')", D: "foo(y=3, 2, 3)"}
+  options: {A: "`foo(1)`", B: "`foo(1, 2, 3, 'hello')`", C: "`foo(1, y=2, z='hello')`", D: "`foo(y=3, 2, 3)`"}
   answer: B
   realm: function
   template: |
@@ -158,8 +173,8 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: init, B: new, C: 没有关键字, D: cls}
-  answer: C
+  options: {A: init, B: new, C: cls, D: 没有关键字}
+  answer: D
   realm: oop
   template: 下面哪个是Python新建对象的关键字;
 
@@ -179,7 +194,7 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "hero.attack", B: "hero['attack']", C: "herro(attack)", D: "attack.hero"}
+  options: {A: "`hero.attack`", B: "`hero['attack']`", C: "`herro(attack)`", D: "`attack.hero`"}
   answer: A
   realm: oop
   template: 设类`Hero`中定义了方法`attack`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
@@ -222,10 +237,17 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "class=520", B: "`class_ = 520`", C: "`print=520`", D: "print(520)"}
+  options: {A: "`class = 0`", B: "`class_ = 520`", C: "`print = 520`", D: "`print(520)`"}
   answer: A
   realm: grammar
   template: 下面哪个是不合法的命令;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`score := 100`", B: "`score:str = 100`", C: "`int score = 100`", D: "`score == 100`"}
+  answer: B
+  realm: grammar
+  template: 下面哪个赋值命令可以正常运行;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}

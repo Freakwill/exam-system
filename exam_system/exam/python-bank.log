@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  10 JAN 2026 20:14
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  15 JAN 2026 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1483,7 +1483,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count167
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 56.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 53.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1500,21 +1500,37 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
 
-Overfull \hbox (53.99866pt too wide) in paragraph at lines 56--59
-[]\T1/lmr/m/n/12 " \EU1/FandolSong-Regular(0)/m/n/12 写 出 为 变 量 \T1/lmr/m/n/12 g
-reet \EU1/FandolSong-Regular(0)/m/n/12 赋 值 为 字 符 串[]\T1/lmtt/m/n/12 Hello, Pres
-ident \EU1/FandolSong-Regular(0)/m/n/12 的 语 句\T1/lmr/m/n/12 : $[]$;" 
+Overfull \hbox (38.94554pt too wide) in paragraph at lines 56--59
+[]\EU1/FandolSong-Regular(0)/m/n/12 写 出 为 变 量 \T1/lmr/m/n/12 hello \EU1/FandolS
+ong-Regular(0)/m/n/12 赋 值 为 字 符 串[]\T1/lmtt/m/n/12 Hello, Professor \EU1/Fandol
+Song-Regular(0)/m/n/12 的 语 句\T1/lmr/m/n/12 : $[]$; 
+ []
+
+
+Overfull \hbox (9.02655pt too wide) in paragraph at lines 71--73
+[]\EU1/FandolSong-Regular(0)/m/n/12 程 序 工 作 目 录 为\T1/lmr/m/n/12 '/beijing/haidi
+an', \EU1/FandolSong-Regular(0)/m/n/12 文 件\T1/lmr/m/n/12 'bimsa.txt' \EU1/Fando
+lSong-Regular(0)/m/n/12 在 文 件 夹\T1/lmr/m/n/12 '/beijing/huairou'
+ []
+
+
+Overfull \hbox (77.44153pt too wide) in paragraph at lines 71--73
+\EU1/FandolSong-Regular(0)/m/n/12 中，|  该 文 件 的 绝 对 路 径 和 相 对 路 径 分 别 为：| $[]$、|
+ $[]$\T1/lmr/m/n/12 ; 
  []
 
 [1
 
 ]
-Overfull \hbox (14.41075pt too wide) in paragraph at lines 91--92
+Overfull \hbox (14.41075pt too wide) in paragraph at lines 105--107
 []\EU1/FandolSong-Regular(0)/m/n/12 连 接 某 个 主 机 时，|  通 常 要 先 获 得 服 务 器 的 具 体 地 
 址，|  包 括$[]$、| $[]$
  []
 
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 105.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 130.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1526,18 +1542,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Overfull \hbox (6.04199pt too wide) in paragraph at lines 143--146
+Overfull \hbox (6.04199pt too wide) in paragraph at lines 172--175
 []\EU1/FandolSong-Regular(0)/m/n/12 定 义 类 \T1/lmr/m/n/12 An-i-mal \EU1/FandolSo
 ng-Regular(0)/m/n/12 之 后\T1/lmr/m/n/12 , \EU1/FandolSong-Regular(0)/m/n/12 用 \T
 1/lmr/m/n/12 An-i-mal() \EU1/FandolSong-Regular(0)/m/n/12 新 建 对 象 时，|  程 序 会 自 
 动 调 用 方 法[]\T1/lmtt/m/n/12 __init__\T1/lmr/m/n/12 ;
- []
-
-
-Overfull \hbox (14.83086pt too wide) in paragraph at lines 152--155
-[]\EU1/FandolSong-Regular(0)/m/n/12 只 要 文 件 夹 的 名 称 正 常，|  并 且 在 其 中 新 建 文 件[]\
-T1/lmtt/m/n/12 __init__.py\EU1/FandolSong-Regular(0)/m/n/12 ，|  那 么 它 就 是 \T1/l
-mr/m/n/12 Python
  []
 
 
@@ -1547,7 +1556,66 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (2.25104pt too wide) in paragraph at lines 213--216
+Overfull \hbox (14.83086pt too wide) in paragraph at lines 181--184
+[]\EU1/FandolSong-Regular(0)/m/n/12 只 要 文 件 夹 的 名 称 正 常，|  并 且 在 其 中 创 建 文 件[]\
+T1/lmtt/m/n/12 __init__.py\EU1/FandolSong-Regular(0)/m/n/12 ，|  那 么 它 就 是 \T1/l
+mr/m/n/12 Python
+ []
+
+
+Overfull \hbox (10.40143pt too wide) in paragraph at lines 214--221
+\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 card.number=3   \T1/lmr/m/n/12 (B) []\T1/l
+mtt/m/n/12 card["number"]="A"   \T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 card[3]=ca
+rd["number"]
+ []
+
+
+Overfull \hbox (130.53387pt too wide) in paragraph at lines 221--228
+\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 students.append("Mike, Lucy")   \T1/lmr/m/
+n/12 (B) []\T1/lmtt/m/n/12 students.append("Mike"); students.append("Lucy")
+ []
+
+
+Overfull \hbox (13.54pt too wide) in paragraph at lines 221--228
+\T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 students.extend("Mike", "Lucy")   \T1/lmr/
+m/n/12 (D) []\T1/lmtt/m/n/12 students + ["Mike", "Lucy"] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+Overfull \hbox (161.40889pt too wide) in paragraph at lines 231--238
+\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 x="League of Legends"; print(x)   \T1/lmr/
+m/n/12 (B) []\T1/lmtt/m/n/12 x=["League of Legends"]; x.append("Honor of Kings"
+)
+ []
+
+
+Overfull \hbox (223.4901pt too wide) in paragraph at lines 231--238
+\T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 x=["League of Legends"]; x += ["Honor of K
+ings"]   \T1/lmr/m/n/12 (D) []\T1/lmtt/m/n/12 x="League of Legends"; x += "Hono
+r of Kings" 
+ []
+
+
+Overfull \hbox (94.89719pt too wide) in paragraph at lines 238--245
+[]\EU1/FandolSong-Regular(0)/m/n/12 将 列 表[]\T1/lmtt/m/n/12 cmd=["pip", "install
+", "pygame"] \EU1/FandolSong-Regular(0)/m/n/12 拆 分 为[]\T1/lmtt/m/n/12 cmd="pip"
+\T1/lmr/m/n/12 , []\T1/lmtt/m/n/12 args=["install, "pygame"]
+ []
+
+
+Overfull \hbox (0.86272pt too wide) in paragraph at lines 238--245
+\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 cmd = cmd[0]; args = cmd[1:]   \T1/lmr/m/n
+/12 (B) []\T1/lmtt/m/n/12 args = cmd[1:]; cmd = cmd[0]
+ []
+
+
+Overfull \hbox (2.25104pt too wide) in paragraph at lines 270--273
 \T1/lmr/m/n/12 (A) Card \EU1/FandolSong-Regular(0)/m/n/12 也 是 变 量  \T1/lmr/m/n/
 12 (B) Card \EU1/FandolSong-Regular(0)/m/n/12 可 像 函 数 一 样 调 用  \T1/lmr/m/n/12 (
 C) card \EU1/FandolSong-Regular(0)/m/n/12 的 类 型 是 \T1/lmr/m/n/12 Card  (D)
@@ -1559,36 +1627,27 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
-Overfull \hbox (28.51408pt too wide) in paragraph at lines 228--232
-\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 import array  \T1/lmr/m/n/12 (B) []\T1/lmt
-t/m/n/12 import numpy as np  \T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 from numpy im
-port array  \T1/lmr/m/n/12 (D)
- []
-
-
-Overfull \hbox (8.7445pt too wide) in paragraph at lines 236--239
-\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 print('Hey, man')  \T1/lmr/m/n/12 (B) []\T
-1/lmtt/m/n/12 class = ['Apple', 'Orange', 'Banana']  \T1/lmr/m/n/12 (C)
- []
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [5]
+Overfull \hbox (13.24963pt too wide) in paragraph at lines 285--289
+\T1/lmr/m/n/12 (A) \EU1/FandolSong-Regular(0)/m/n/12 无 需 导 入 直 接 使 用 \T1/lmr/m/
+n/12 Beau-ti-ful-Soup  (B) []\T1/lmtt/m/n/12 import bs4 as BeautifulSoup  \T1/l
+mr/m/n/12 (C)
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] 
+[6]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7] 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1596,14 +1655,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] (./python-bank.aux) ) 
+[8] (./python-bank.aux) ) 
 Here is how much of TeX's memory you used:
- 23845 strings out of 493591
- 476631 string characters out of 6143546
- 468437 words of memory out of 10000000
- 26976 multiletter control sequences out of 15000+600000
- 39903 words of font info for 59 fonts, out of 8000000 for 9000
+ 23848 strings out of 493591
+ 476660 string characters out of 6143546
+ 467862 words of memory out of 10000000
+ 26978 multiletter control sequences out of 15000+600000
+ 42898 words of font info for 60 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,11n,77p,10442b,1936s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,77p,10442b,1833s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on python-bank.pdf (7 pages).
+Output written on python-bank.pdf (8 pages).

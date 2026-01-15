@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  14 JAN 2026 17:57
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2024.6.28)  15 JAN 2026 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1475,26 +1475,17 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-! Missing number, treated as zero.
-<to be read again> 
-                   \global 
-l.34 \thispagestyle{plain}
-                          %
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+Overfull \hbox (14.41075pt too wide) in paragraph at lines 39--41
+[]\EU1/FandolSong-Regular(0)/m/n/12 连 接 某 个 主 机 时，|  通 常 要 先 获 得 服 务 器 的 具 体 地 
+址，|  包 括$[]$、| $[]$
+ []
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \global 
-l.34 \thispagestyle{plain}
-                          %
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+
+Overfull \hbox (9.02655pt too wide) in paragraph at lines 45--47
+[]\EU1/FandolSong-Regular(0)/m/n/12 程 序 工 作 目 录 为\T1/lmr/m/n/12 '/beijing/haidi
+an', \EU1/FandolSong-Regular(0)/m/n/12 文 件\T1/lmr/m/n/12 'bimsa.txt' \EU1/Fando
+lSong-Regular(0)/m/n/12 在 文 件 夹\T1/lmr/m/n/12 '/beijing/huairou'
+ []
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -1502,7 +1493,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 * Font 'FandolFang-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolFang-Regular_int=\count167
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 53.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 47.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1518,36 +1509,18 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . <->"[FandolFang-Regular.otf]/OT:embolden=4;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-
-Overfull \hbox (6.04199pt too wide) in paragraph at lines 71--74
-[]\EU1/FandolSong-Regular(0)/m/n/12 定 义 类 \T1/lmr/m/n/12 An-i-mal \EU1/FandolSo
-ng-Regular(0)/m/n/12 之 后\T1/lmr/m/n/12 , \EU1/FandolSong-Regular(0)/m/n/12 用 \T
-1/lmr/m/n/12 An-i-mal() \EU1/FandolSong-Regular(0)/m/n/12 新 建 对 象 时，|  程 序 会 自 
-动 调 用 方 法[]\T1/lmtt/m/n/12 __init__\T1/lmr/m/n/12 ;
- []
-
-[1
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) [1
 
 ]
-Overfull \hbox (130.53387pt too wide) in paragraph at lines 93--100
-\T1/lmr/m/n/12 (A) []\T1/lmtt/m/n/12 students.append("Mike, Lucy")   \T1/lmr/m/
-n/12 (B) []\T1/lmtt/m/n/12 students.append("Mike"); students.append("Lucy")
- []
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Overfull \hbox (13.54pt too wide) in paragraph at lines 93--100
-\T1/lmr/m/n/12 (C) []\T1/lmtt/m/n/12 students.extend("Mike", "Lucy")   \T1/lmr/
-m/n/12 (D) []\T1/lmtt/m/n/12 students + ["Mike", "Lucy"] 
- []
-
-
-Overfull \hbox (13.24963pt too wide) in paragraph at lines 100--104
-\T1/lmr/m/n/12 (A) \EU1/FandolSong-Regular(0)/m/n/12 无 需 导 入 直 接 使 用 \T1/lmr/m/
-n/12 Beau-ti-ful-Soup  (B) []\T1/lmtt/m/n/12 import bs4 as BeautifulSoup  \T1/l
-mr/m/n/12 (C)
- []
-
-
+[2] 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1555,14 +1528,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (./python_exam.aux) ) 
+[3] (./python_exam.aux) ) 
 Here is how much of TeX's memory you used:
- 23653 strings out of 493591
- 476805 string characters out of 6143546
- 441647 words of memory out of 10000000
- 26796 multiletter control sequences out of 15000+600000
+ 23863 strings out of 493591
+ 480666 string characters out of 6143546
+ 467035 words of memory out of 10000000
+ 27002 multiletter control sequences out of 15000+600000
  38261 words of font info for 58 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,10n,77p,10442b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,10n,77p,10442b,1874s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on python_exam.pdf (2 pages).
+Output written on python_exam.pdf (3 pages).

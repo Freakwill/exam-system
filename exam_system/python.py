@@ -4,7 +4,7 @@ from exam import *
 from plugin import *
 
 
-n_fill = 20
+n_fill = 16
 n_choice = 10
 n_truefalse = 10
 

@@ -55,7 +55,7 @@ def keep(f):
 @keep
 def replace_backticks_with_verb(text):
     # Use regular expression to find substrings surrounded by backticks
-    pattern = r'`([^`]*)`'
+    pattern = r'`([^`]+)`'
     replaced_text = re.sub(pattern, r'\\verb|\1|', text)
     return replaced_text
 

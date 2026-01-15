@@ -7,10 +7,10 @@ from plugin import *
 paper = ExamPaper()
 
 paper.calculation = []
-paper.fill = [p @ replace_backticks_with_verb for p in FillProblem.read_yaml(filename='python_fill')]
-paper.choice = [p @ replace_backticks_with_verb for p in ChoiceProblem.read_yaml(filename='python_choice')]
-paper.truefalse = [p @ replace_backticks_with_verb for p in TrueFalseProblem.read_yaml(filename='python_truefalse')]
-paper.calculation = [p @ replace_backticks_with_listing for p in CalculationProblem.read_yaml(filename='python_calculation')]
+paper.fill = (FillProblem @ (replace_backticks_with_listing+replace_backticks_with_verb)).read_yaml(filename='python_fill')
+paper.choice = (ChoiceProblem @ replace_backticks_with_verb).read_yaml(filename='python_choice')
+paper.truefalse = (TrueFalseProblem @ replace_backticks_with_verb).read_yaml(filename='python_truefalse')
+paper.calculation = (CalculationProblem @ (replace_backticks_with_listing+replace_backticks_with_verb)).read_yaml(filename='python_calculation')
 paper.build()
 paper.write(filename='exam/python-bank')
 

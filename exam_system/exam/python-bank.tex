@@ -17,7 +17,7 @@
 %
 \geometry{left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm}%
 \pagestyle{fancy}%
-\chead{\textbf{人民大学{-}雁栖湖人工智能学院考试命题纸}}%
+\chead{\footnotesize{\textbf{人民大学{-}雁栖湖人工智能学院考试命题纸}}}%
 \cfoot{\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}}%
 \renewcommand{\headrulewidth}{0pt}%
 %
@@ -29,7 +29,7 @@
 \begin{center}%
 \begin{tabular}{lclclc}%
 课程&\multicolumn{2}{c}{\autolenunderline{\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}&班级&\multicolumn{2}{c}{\autolenunderline{\_\_\_\_\_\_\_\_\_\_\_\_\_\_}}\\%
-姓名&\autolenunderline{}&学号（末2位）&\autolenunderline{}&教师姓名&\autolenunderline{}\\%
+姓名&\autolenunderline{}&学号&\autolenunderline{}&教师姓名&\autolenunderline{}\\%
 \end{tabular}%
 \end{center}%
 \begin{center}%
@@ -50,10 +50,16 @@ Python 的格言是 \autolenunderline{人生苦短}, 我用 Python;%
 \item%
 说程序设计体现 Python 简洁明了的风格的形容词是\autolenunderline{pythonic};%
 \item%
-你要克服地心引力跨越大海飞向太空，为了实现这个梦想，你首先要下载具有该功能的\autolenunderline{第三方库} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用\autolenunderline{import}关键字导入;
+为了实现“乘坐马斯克的星舰飞向太空”的梦想，用户可先用\autolenunderline{pip}下载具有该功能的\autolenunderline{第三方库} (如\verb|starship|), 然后在 Python 的脚本文件中使用\autolenunderline{import}关键字导入;
 %
 \item%
-"写出为变量greet赋值为字符串\verb|Hello, President|的语句: \autolenunderline{greet="Hello, President"};"
+写出为变量hello赋值为字符串\verb|Hello, Professor|的语句: \autolenunderline{hello="Hello, Professor"};
+%
+\item%
+运算符\autolenunderline{+}可以将多个字符串拼接起来;
+%
+\item%
+Python中进行幂运算的运算符是\autolenunderline{**};
 %
 \item%
 写出至少三种内建类型: \autolenunderline{int}、\autolenunderline{float}、\autolenunderline{str};%
@@ -62,11 +68,19 @@ C 语言中的数组类似于 Python 中的$\autolenunderline{list}$类型;%
 \item%
 C 语言中的结构体类似于 Python 中的$\autolenunderline{dict}$类型;%
 \item%
-视频和图像属于\autolenunderline{二进制}文件，用\autolenunderline{wb}方法写入（保存或另存为），用\autolenunderline{rb}方法读取;%
+程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{../huairou/bimsa.txt}、\autolenunderline{/beijing/huairou/bimsa.txt};%
+\item%
+Python脚本属于\autolenunderline{文本}文件，用\autolenunderline{w}方法写入（保存或另存为），用\autolenunderline{r}方法读取;%
+\item%
+Word文档属于\autolenunderline{二进制}文件，用\autolenunderline{wb}方法写入（保存或另存为），用\autolenunderline{rb}方法读取;%
 \item%
 Python脚本文件后缀是\autolenunderline{.py};%
 \item%
 如果函数没有返回语句，那么它默认返回: \autolenunderline{None};%
+\item%
+函数返回语句的关键字是: \autolenunderline{return};%
+\item%
+定义函数的关键字是: \autolenunderline{def};%
 \item%
 匿名函数的关键字是: \autolenunderline{lambda};%
 \item%
@@ -78,17 +92,28 @@ Python脚本文件后缀是\autolenunderline{.py};%
 \item%
 创建文件对象的常用语法糖是\autolenunderline{with}语句;%
 \item%
-定义方法的关键字是：\autolenunderline{def};%
+定义类方法的关键字是：\autolenunderline{def};%
 \item%
-至少写出两个个你熟悉的标准方库: \autolenunderline{os}、\autolenunderline{pathlib};%
+至少写出两个你熟悉的标准库: \autolenunderline{os}、\autolenunderline{pathlib};%
 \item%
 下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{from numpy.random import rand}%
 \item%
-Python 网络编程中堪称绝配的两个第三方库/模块: \autolenunderline{requests}、\autolenunderline{bs4};%
+Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderline{`requests`}、\autolenunderline{`bs4`};%
 \item%
 表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: \autolenunderline{200};%
 \item%
 连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{IP地址}、\autolenunderline{端口号}两部分;%
+\item%
+下面代码打印出的结果是\autolenunderline{Hello};
+\begin{lstlisting}[language=python]
+x = "Hello"
+def f():
+     x = "Nihao"
+f()
+print(x)
+
+\end{lstlisting}
+%
 \end{enumerate}%
 
 
@@ -100,7 +125,7 @@ Python 比 C、Java 容易学;~~\true%
 \item%
 学习 Python 是一件非常快乐，非常有成就感的事情;~~\true%
 \item%
-def 符合标识符的文法，因此可作为变量名;
+lambda 符合标识符的文法，因此可作为变量名;
 ~~\false%
 \item%
 Python 是一种动态类型面向对象的过程式解释型语言;~~\true%
@@ -113,9 +138,13 @@ Python的布尔型其实是特殊的整型;~~\true%
 \item%
 Python 没有 goto 语句;~~\true%
 \item%
-Python 的 for/while 循环语句和 if 语句一样可以接 else;~~\true%
+字符串的值一旦改变（比如接上其他字符串）其id一定改变~~\true%
 \item%
-Python 有 do-while 语句;~~\false%
+列表的值一旦改变（比如接上其他列表）其id一定改变~~\true%
+\item%
+Python 的 \verb|for/while| 循环语句和 \verb|if| 语句一样可以接 \verb|else|;~~\true%
+\item%
+Python 有 \verb|do-while| 语句;~~\false%
 \item%
 Python 有 case 语句;~~\false%
 \item%
@@ -137,7 +166,7 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 类型\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可以像普通函数那样被直接访问;
 ~~\false%
 \item%
-继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
+继承时，子类通常会自动拥有父类方法，且可重写父类方法;
 ~~\true%
 \item%
 定义类Animal之后, 用Animal()新建对象时，程序会自动调用方法\verb|__init__|;
@@ -149,10 +178,10 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 命令\verb|from mypackage import foo|在导入包中的变量foo同时，也会导入包\verb|mypackage|自身;
 ~~\false%
 \item%
-只要文件夹的名称正常，并且在其中新建文件\verb|__init__.py|，那么它就是Python包;
+只要文件夹的名称正常，并且在其中创建文件\verb|__init__.py|，那么它就是Python包;
 ~~\true%
 \item%
-requests的get方法可以下载任何网站上的资源;
+requests的get方法可以不受限制地访问任何网站并下载其上的资源;
 ~~\false%
 \end{enumerate}%
 
@@ -182,8 +211,36 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 关于内建变量解释正确的是？~~\mypar{B}\\
 (A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的~~(C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
 \item%
+下面关于字典\verb|card={"number":3, "suit":"club"}|的使用（语法上）错误的是？~~\mypar{A}\\
+(A) \verb|card.number=3|
+~~(B) \verb|card["number"]="A"| 
+~~(C) \verb|card[3]=card["number"]|
+~~(D) \verb|card["suit"]=input()|
+%
+\item%
+为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{B}\\
+(A) \verb|students.append("Mike, Lucy")|
+~~(B) \verb|students.append("Mike"); students.append("Lucy")| 
+~~(C) \verb|students.extend("Mike", "Lucy")|
+~~(D) \verb|students + ["Mike", "Lucy"]|
+%
+\item%
 关于列表说法正确的是？~~\mypar{D}\\
 (A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
+\item%
+下面那个命令会导致变量id的变化？~~\mypar{D}\\
+(A) \verb|x="League of Legends"; print(x)|
+~~(B) \verb|x=["League of Legends"]; x.append("Honor of Kings")| 
+~~(C) \verb|x=["League of Legends"]; x += ["Honor of Kings"]|
+~~(D) \verb|x="League of Legends"; x += "Honor of Kings"|
+%
+\item%
+将列表\verb|cmd=["pip", "install", "pygame"]|拆分为\verb|cmd="pip"|, \verb|args=["install, "pygame"]|两部分，最便捷的有效方法是？~~\mypar{D}\\
+(A) \verb|cmd = cmd[0]; args = cmd[1:]|
+~~(B) \verb|args = cmd[1:]; cmd = cmd[0]| 
+~~(C) \verb|cmd, *args = cmd|
+~~(D) \verb|cmd, args = cmd|
+%
 \item%
 文件操作完毕后，应该;~~\mypar{D}\\
 (A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
@@ -216,25 +273,25 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 下面哪个是Python初始化对象的方法;~~\mypar{B}\\
 (A) \verb|__new__|~~(B) \verb|__init__|~~(C) \verb|_new_|~~(D) \verb|_init_|%
 \item%
-设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{B}\\
-(A) hero['attack']~~(B) hero.attack~~(C) herro(attack)~~(D) attack.hero%
+设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{A}\\
+(A) hero.attack~~(B) hero['attack']~~(C) herro(attack)~~(D) attack.hero%
 \item%
 子类继承父类的关键字是;~~\mypar{D}\\
-(A) subclass~~(B) extend~~(C) child~~(D) class%
+(A) \verb|subclass|~~(B) \verb|extend|~~(C) \verb|child|~~(D) \verb|class|%
 \item%
 下面哪个是Python导入包的关键字;~~\mypar{B}\\
 (A) \verb|include|~~(B) \verb|import|~~(C) \verb|export|~~(D) \verb|use|%
 \item%
-同学用pip工具下载了包\verb|numpy|，他想直接在脚本中使用包中的变量\verb|array|，那么正确的做法是;
-~~\mypar{B}\\
-(A) \verb|import array|~~(B) \verb|import numpy as np|~~(C) \verb|from numpy import array|~~(D) \verb|from array import numpy|%
+安装包\verb|bs4|后，用户想直接在脚本中使用包中的类\verb|BeautifulSoup|，那么应该先做什么;
+~~\mypar{C}\\
+(A) 无需导入直接使用BeautifulSoup~~(B) \verb|import bs4 as BeautifulSoup|~~(C) \verb|from bs4 import BeautifulSoup|~~(D) \verb|import BeautifulSoup| from bs4%
 \item%
 通过\verb|from PIL import Image|导入包之后，下面不可以做的是;
 ~~\mypar{A}\\
 (A) 使用变量\verb|PIL|~~(B) 使用变量\verb|Image|~~(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
 \item%
-下面哪个是不合法的命令;~~\mypar{B}\\
-(A) \verb|print('Hey, man')|~~(B) \verb|class = ['Apple', 'Orange', 'Banana']|~~(C) \verb|print=520|~~(D) str(520)%
+下面哪个是不合法的命令;~~\mypar{A}\\
+(A) class=520~~(B) \verb|class_ = 520|~~(C) \verb|print=520|~~(D) print(520)%
 \item%
 实现主机之间网络连接的标准方法是建立;~~\mypar{C}\\
 (A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%

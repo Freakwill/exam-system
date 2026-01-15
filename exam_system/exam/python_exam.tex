@@ -36,28 +36,34 @@
 \textbf{一、填空题 (本题满分40分，每空 2 分, 共 20 空):}%
 \begin{enumerate}[1)]%
 \item%
-Python脚本文件后缀是\autolenunderline{};%
+连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{}、\autolenunderline{}两部分;%
 \item%
-说程序设计体现 Python 简洁明了的风格的形容词是\autolenunderline{};%
+C 语言中的数组类似于 Python 中的$\autolenunderline{}$类型;%
 \item%
-表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: \autolenunderline{};%
+函数返回语句的关键字是: \autolenunderline{};%
 \item%
-下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{}%
+程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{}、\autolenunderline{};%
 \item%
-写出为变量hello赋值为字符串\verb|Hello, Professor|的语句: \autolenunderline{};
+为了实现“乘坐马斯克的星舰飞向太空”的梦想，用户可先用\autolenunderline{}下载具有该功能的\autolenunderline{} (如\verb|starship|), 然后在 Python 的脚本文件中使用\autolenunderline{}关键字导入;
 %
 \item%
-如果函数没有返回语句，那么它默认返回: \autolenunderline{};%
-\item%
-Python 的格言是 \autolenunderline{}, 我用 Python;%
-\item%
-写出至少三种内建类型: \autolenunderline{}、\autolenunderline{}、\autolenunderline{};%
+Word文档属于\autolenunderline{}文件，用\autolenunderline{}方法写入（保存或另存为），用\autolenunderline{}方法读取;%
 \item%
 Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderline{}、\autolenunderline{};%
 \item%
 定义类方法的关键字是：\autolenunderline{};%
 \item%
+Python中进行幂运算的运算符是\autolenunderline{};
+%
+\item%
+Python脚本属于\autolenunderline{}文件，用\autolenunderline{}方法写入（保存或另存为），用\autolenunderline{}方法读取;%
+\item%
+匿名函数的关键字是: \autolenunderline{};%
+\item%
 循环语句中，Python 的控制命令有: \autolenunderline{}、\autolenunderline{};%
+\item%
+写出为变量hello赋值为字符串\verb|Hello, Professor|的语句: \autolenunderline{};
+%
 \item%
 下面代码打印出的结果是\autolenunderline{};
 \begin{lstlisting}[language=python]
@@ -69,8 +75,6 @@ print(x)
 
 \end{lstlisting}
 %
-\item%
-程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{}、\autolenunderline{};%
 \end{enumerate}%
 
 
@@ -79,29 +83,28 @@ print(x)
 \textbf{二、判断题 (本题满分20分，每题 2 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
-对 Python 来说，缩进具有语法功能;~~\mypar{}%
+相比传统计算机语言，Python 运行速度比较慢，但开发效率高;~~\mypar{}%
 \item%
-继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
-~~\mypar{}%
-\item%
-无论包\verb|mypackage|安装在哪里，\verb|import mypackage|都会自动搜索并导入该包;
-~~\mypar{}%
-\item%
-lambda 符合标识符的文法，因此可作为变量名;
-~~\mypar{}%
-\item%
-Python 有 case 语句;~~\mypar{}%
+Python中没有函数指针的概念，函数的行为和普通变量是一样的;~~\mypar{}%
 \item%
 requests的get方法可以不受限制地访问任何网站并下载其上的资源;
 ~~\mypar{}%
 \item%
-Python 的 \verb|for/while| 循环语句和 \verb|if| 语句一样可以接 \verb|else|;~~\mypar{}%
-\item%
-用open函数打开文件得到的返回值是文件中的内容;~~\mypar{}%
-\item%
-不能在Python 的函数内部操作全局变量;~~\mypar{}%
+继承时，子类通常会自动拥有父类方法，且可重写父类方法;
+~~\mypar{}%
 \item%
 函数内部不能调用函数自身，否则会陷入无限循环;~~\mypar{}%
+\item%
+Python 没有 goto 语句;~~\mypar{}%
+\item%
+用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;~~\mypar{}%
+\item%
+命令\verb|from mypackage import foo|在导入包中的变量foo同时，也会导入包\verb|mypackage|自身;
+~~\mypar{}%
+\item%
+对 Python 来说，缩进具有语法功能;~~\mypar{}%
+\item%
+字符串的值一旦改变（比如接上其他字符串）其id一定改变~~\mypar{}%
 \end{enumerate}%
 
 
@@ -110,25 +113,27 @@ Python 的 \verb|for/while| 循环语句和 \verb|if| 语句一样可以接 \ver
 \textbf{三、选择题 (本题满分40分，每题 4 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
+设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{}\\
+(A) hero.attack~~(B) hero['attack']~~(C) herro(attack)~~(D) attack.hero%
+\item%
+关于列表说法正确的是？~~\mypar{}\\
+(A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
+\item%
 下面哪个起到流程控制作用的关键字不是Python的关键字;~~\mypar{}\\
 (A) break~~(B) continue~~(C) return~~(D) goto%
-\item%
-学习编程的第一个命令是？~~\mypar{}\\
-(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey dude%
-\item%
-下面关于字典\verb|card={"number":3, "suit":"club"}|的使用（语法上）错误的是？~~\mypar{}\\
-(A) \verb|card.number=3|
-~~(B) \verb|card["number"]="A"| 
-~~(C) \verb|card[3]=card["number"]|
-~~(D) \verb|card["suit"]=input()|
-%
 \item%
 方法\verb|.item|常用与什么类型数据的遍历;~~\mypar{}\\
 (A) 元组~~(B) 字典~~(C) 列表~~(D) 字符串%
 \item%
-定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
+通过\verb|from PIL import Image|导入包之后，下面不可以做的是;
 ~~\mypar{}\\
-(A) foo(1)~~(B) foo(1, 2, 3, 'hello')~~(C) foo(1, y=2, z='hello')~~(D) foo(y=3, 2, 3)%
+(A) 使用变量\verb|PIL|~~(B) 使用变量\verb|Image|~~(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
+\item%
+存储个人信息时，最适合采用什么数据类型？~~\mypar{}\\
+(A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
+\item%
+下面哪个是不合法的命令;~~\mypar{}\\
+(A) class=520~~(B) \verb|class_ = 520|~~(C) \verb|print=520|~~(D) print(520)%
 \item%
 文件操作完毕后，应该;~~\mypar{}\\
 (A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
@@ -136,19 +141,8 @@ Python 的 \verb|for/while| 循环语句和 \verb|if| 语句一样可以接 \ver
 Python发明人是在什么情况下发明Python的？~~\mypar{}\\
 (A) 内心迷茫的时候~~(B) 在实验室里专研~~(C) 度假时候无聊打发时间~~(D) 泡咖啡馆奇思妙想%
 \item%
-设\verb|Card|是类名，card是其对象，则下述说法错误的是;~~\mypar{}\\
-(A) Card也是变量~~(B) Card可像函数一样调用~~(C) card的类型是Card~~(D) Card本身无类型%
-\item%
-为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{}\\
-(A) \verb|students.append("Mike, Lucy")|
-~~(B) \verb|students.append("Mike"); students.append("Lucy")| 
-~~(C) \verb|students.extend("Mike", "Lucy")|
-~~(D) \verb|students + ["Mike", "Lucy"]|
-%
-\item%
-安装包\verb|bs4|后，用户想直接在脚本中使用包中的类\verb|BeautifulSoup|，那么应该先做什么;
-~~\mypar{}\\
-(A) 无需导入直接使用BeautifulSoup~~(B) \verb|import bs4 as BeautifulSoup|~~(C) \verb|from bs4 import BeautifulSoup|~~(D) \verb|import BeautifulSoup| from bs4%
+实现主机之间网络连接的标准方法是建立;~~\mypar{}\\
+(A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
 \end{enumerate}%
 
 

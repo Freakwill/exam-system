@@ -96,7 +96,7 @@
   answer: true
   realm: oop
   template: |
-    继承时，子类自动拥有父类的所有方法，没有例外，且可重写父类方法;
+    继承时，子类通常会自动拥有父类方法，且可重写父类方法;
 - !!python/object:exam.TrueFalseProblem
   answer: true
   realm: oop

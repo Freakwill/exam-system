@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1768047257 "python-bank.tex" "python-bank.pdf" "python-bank" 1768047260
-  "/dev/null" 1768047255 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1768462368 "python-bank.tex" "python-bank.pdf" "python-bank" 1768462370
+  "/dev/null" 1768462366 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -8,6 +8,7 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm" 1254269338 12076 b54175e02101bea1addf6b2d0197ed12 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm" 1254269338 12088 d750ac78274fa7c9f73ba09914c04f8a ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1254269338 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1254269338 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
@@ -123,9 +124,9 @@
   "/usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt" 1719576769 3519750 57b20ef4dc0fbd411dfb49cd4a5ccb3e ""
   "/usr/local/texlive/2016/texmf.cnf" 1719569212 602 3ed9fba4493354f5e25510020113f29f ""
   "/usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty" 1529054314 1685 4f6da10271a173a1d182ab0ac093abe2 ""
-  "python-bank.aux" 1768047259 90 749caa80a52d91a47ba150312556d0ef ""
-  "python-bank.tex" 1768047242 11584 9253c047ad5a6e098e701f4f01bd943a ""
+  "python-bank.aux" 1768462370 90 928fc0414971529d23b91b8295a7dd1f ""
+  "python-bank.tex" 1768462360 13834 bbd655ac09048ff24b0050ed803108cf ""
   (generated)
-  "python-bank.aux"
-  "python-bank.log"
   "python-bank.pdf"
+  "python-bank.log"
+  "python-bank.aux"
