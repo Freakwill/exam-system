@@ -88,10 +88,15 @@
   template: |
     如果要为某个类定义“+”方法，直接定义`def +(self, other): pass`即可;
 - !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: oop
+  template: |
+    类`Hero`中定义了方法`attack`。`attack`可用`Hero.attack`或通过其对象访问;
+- !!python/object:exam.TrueFalseProblem
   answer: false
   realm: oop
   template: |
-    类型`Hero`中定义了方法`attack`。`attack`可以像普通函数那样被直接访问;
+    类`Hero`初始化中定义了对象的`damage`属性。该属性可用`Hero.damage`访问;
 - !!python/object:exam.TrueFalseProblem
   answer: true
   realm: oop

@@ -200,10 +200,10 @@
   template: 设类`Hero`中定义了方法`attack`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "`subclass`", B: "`extend`", C: "`child`", D: "`class`"}
+  options: {A: "`subclass Knight(Hero)`", B: "`Knight extend Hero`", C: "`child Knight(Hero)`", D: "`class Knight(Hero)`"}
   answer: D
   realm: oop
-  template: 子类继承父类的关键字是;
+  template: 子类Knight继承父类Hero的语法是;
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}

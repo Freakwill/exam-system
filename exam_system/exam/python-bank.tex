@@ -96,7 +96,7 @@ Python脚本文件后缀是\autolenunderline{.py};%
 \item%
 至少写出两个你熟悉的标准库: \autolenunderline{os}、\autolenunderline{pathlib};%
 \item%
-下载第三方库numpy, 库中有子模块random, 子模块中定义了函数rand; 如何直接导入rand: \autolenunderline{from numpy.random import rand}%
+下载第三方库\verb|numpy|, 库中有子模块\verb|random|, 子模块中定义了函数\verb|rand|; 如何直接导入\verb|rand|: \autolenunderline{from numpy.random import rand}%
 \item%
 Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderline{`requests`}、\autolenunderline{`bs4`};%
 \item%
@@ -163,7 +163,10 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 如果要为某个类定义“+”方法，直接定义\verb|def +(self, other): pass|即可;
 ~~\false%
 \item%
-类型\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可以像普通函数那样被直接访问;
+类\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可用\verb|Hero.attack|或通过其对象访问;
+~~\true%
+\item%
+类\verb|Hero|初始化中定义了对象的\verb|damage|属性。该属性可用\verb|Hero.damage|访问;
 ~~\false%
 \item%
 继承时，子类通常会自动拥有父类方法，且可重写父类方法;
@@ -196,20 +199,20 @@ Python 的吉祥物是;~~\mypar{D}\\
 Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 (A) 内心迷茫的时候~~(B) 在实验室里专研~~(C) 度假时候无聊打发时间~~(D) 泡咖啡馆奇思妙想%
 \item%
-学习编程的第一个命令是？~~\mypar{A}\\
-(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey dude%
-\item%
 下面哪个不能作为Python的变量？~~\mypar{D}\\
 (A) print~~(B) int~~(C) CONSTANT~~(D) def%
-\item%
-下面哪个是可变变量的类型？~~\mypar{C}\\
-(A) 字符串~~(B) 数字~~(C) 列表~~(D) 元组%
 \item%
 存储个人信息时，最适合采用什么数据类型？~~\mypar{B}\\
 (A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
 \item%
 关于内建变量解释正确的是？~~\mypar{B}\\
 (A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的~~(C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
+\item%
+学习编程的第一个命令是？~~\mypar{A}\\
+(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey man%
+\item%
+下面哪个是可变变量的类型？~~\mypar{C}\\
+(A) 字符串~~(B) 数字~~(C) 列表~~(D) 元组%
 \item%
 下面关于字典\verb|card={"number":3, "suit":"club"}|的使用（语法上）错误的是？~~\mypar{A}\\
 (A) \verb|card.number=3|
@@ -218,7 +221,7 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 ~~(D) \verb|card["suit"]=input()|
 %
 \item%
-为学生名单列表students增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{B}\\
+为学生名单列表\verb|students|增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{B}\\
 (A) \verb|students.append("Mike, Lucy")|
 ~~(B) \verb|students.append("Mike"); students.append("Lucy")| 
 ~~(C) \verb|students.extend("Mike", "Lucy")|
@@ -251,7 +254,7 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 (A) 元组~~(B) 字典~~(C) 整数~~(D) 字符串%
 \item%
-方法\verb|.item|常用与什么类型数据的遍历;~~\mypar{B}\\
+方法\verb|.items|常用与什么类型数据的遍历;~~\mypar{B}\\
 (A) 元组~~(B) 字典~~(C) 列表~~(D) 字符串%
 \item%
 下面哪个是Python创建函数的关键字;~~\mypar{A}\\
@@ -259,13 +262,13 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 \item%
 定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
 ~~\mypar{B}\\
-(A) foo(1)~~(B) foo(1, 2, 3, 'hello')~~(C) foo(1, y=2, z='hello')~~(D) foo(y=3, 2, 3)%
+(A) \verb|foo(1)|~~(B) \verb|foo(1, 2, 3, 'hello')|~~(C) \verb|foo(1, y=2, z='hello')|~~(D) \verb|foo(y=3, 2, 3)|%
 \item%
 下面哪个是Python创建类的关键字;~~\mypar{C}\\
 (A) def~~(B) classdef~~(C) class~~(D) cls%
 \item%
-下面哪个是Python新建对象的关键字;~~\mypar{C}\\
-(A) init~~(B) new~~(C) 没有关键字~~(D) cls%
+下面哪个是Python新建对象的关键字;~~\mypar{D}\\
+(A) init~~(B) new~~(C) cls~~(D) 没有关键字%
 \item%
 设\verb|Card|是类名，card是其对象，则下述说法错误的是;~~\mypar{D}\\
 (A) Card也是变量~~(B) Card可像函数一样调用~~(C) card的类型是Card~~(D) Card本身无类型%
@@ -274,10 +277,10 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 (A) \verb|__new__|~~(B) \verb|__init__|~~(C) \verb|_new_|~~(D) \verb|_init_|%
 \item%
 设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{A}\\
-(A) hero.attack~~(B) hero['attack']~~(C) herro(attack)~~(D) attack.hero%
+(A) \verb|hero.attack|~~(B) \verb|hero['attack']|~~(C) \verb|herro(attack)|~~(D) \verb|attack.hero|%
 \item%
-子类继承父类的关键字是;~~\mypar{D}\\
-(A) \verb|subclass|~~(B) \verb|extend|~~(C) \verb|child|~~(D) \verb|class|%
+子类Knight继承父类Hero的语法是;~~\mypar{D}\\
+(A) \verb|subclass Knight(Hero)|~~(B) \verb|Knight extend Hero|~~(C) \verb|child Knight(Hero)|~~(D) \verb|class Knight(Hero)|%
 \item%
 下面哪个是Python导入包的关键字;~~\mypar{B}\\
 (A) \verb|include|~~(B) \verb|import|~~(C) \verb|export|~~(D) \verb|use|%
@@ -291,7 +294,10 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 (A) 使用变量\verb|PIL|~~(B) 使用变量\verb|Image|~~(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
 \item%
 下面哪个是不合法的命令;~~\mypar{A}\\
-(A) class=520~~(B) \verb|class_ = 520|~~(C) \verb|print=520|~~(D) print(520)%
+(A) \verb|class = 0|~~(B) \verb|class_ = 520|~~(C) \verb|print = 520|~~(D) \verb|print(520)|%
+\item%
+下面哪个赋值命令可以正常运行;~~\mypar{B}\\
+(A) \verb|score := 100|~~(B) \verb|score:str = 100|~~(C) \verb|int score = 100|~~(D) \verb|score == 100|%
 \item%
 实现主机之间网络连接的标准方法是建立;~~\mypar{C}\\
 (A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
