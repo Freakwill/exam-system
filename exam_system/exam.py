@@ -323,6 +323,23 @@ class FillProblem(OtherProblem):
         self.masked = set(self.answer.keys()) 
         self.parameter.update({k:Command('autolenunderline', NoEscape(v)) for k, v in self.answer.items()})
 
+    @property
+    def n_fills(self):
+        return len(self.answer)
+
+    @classmethod
+    def random(cls, n=1, *args, **kwargs):
+        # read n problems from yaml files (randomly)
+        problems = super().random(n=n, *args, **kwargs)
+        n_ = 0
+        for k, p in enumerate(problems):
+            print(k, n_, n, p.n_fills)
+            if n_ >= n:
+                return problems[:k]
+            n_ += p.n_fills
+        return problems
+
+
 
 # with open('bank/python_choice.yaml', encoding='utf-8') as fo:
 #     problem = yaml.unsafe_load(fo)[0]

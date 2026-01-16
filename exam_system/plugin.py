@@ -79,3 +79,5 @@ def replace_backticks_with_listing(text):
     new_text = re.sub(pattern, replace, text)
     return new_text
 
+code = replace_backticks_with_listing+replace_backticks_with_verb
+

@@ -74,16 +74,16 @@
   parameter: {}
   options:
     A: |
-      `students.append("Mike, Lucy")`
+      `students.append("M, L")`
     B: |
-      `students.append("Mike"); students.append("Lucy")` 
+      `students.append("M"); students.append("L")` 
     C: |
-      `students.extend("Mike", "Lucy")`
+      `students.extend("M", "L")`
     D: |
-      `students + ["Mike", "Lucy"]`
+      `students + ["M", "L"]`
   answer: B
   realm: programming
-  template: 为学生名单列表`students`增加两位新同学"Mike"和"Lucy"，可行的命令是？
+  template: 为学生名单列表`students`增加两位新同学"M"和"L"，可行的命令是？
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
@@ -96,13 +96,13 @@
   parameter: {}
   options:
     A: |
-      `x="League of Legends"; print(x)`
+      `x="LoL"; print(x)`
     B: |
-      `x=["League of Legends"]; x.append("Honor of Kings")` 
+      `x=["LoL"]; x.append("Honor of Kings")` 
     C: |
-      `x=["League of Legends"]; x += ["Honor of Kings"]`
+      `x=["LoL"]; x += ["Honor of Kings"]`
     D: |
-      `x="League of Legends"; x += "Honor of Kings"`
+      `x="LoL"; x += "Honor of Kings"`
   answer: D
   realm: programming
   template: 下面那个命令会导致变量id的变化？
@@ -248,7 +248,20 @@
   answer: B
   realm: grammar
   template: 下面哪个赋值命令可以正常运行;
-
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "最后打印结果为Hello RUC", B: "第一个`x`为全局变量", C: "`f()`中的`x`为全局变量", D: "`f()`中的`x`为局部变量"}
+  answer: D
+  realm: grammar
+  template: |
+    关于下述程序，下面说法错误的是;
+    ```python
+    x = ["Hello"]
+    def f():
+        x.append("RUC")
+    f()
+    print(" ".join(x))
+    ```
 - !!python/object:exam.ChoiceProblem
   parameter: {}
   options: {A: Wifi, B: 接口对象, C: 套接字对象, D: 局域网}

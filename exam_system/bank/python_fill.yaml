@@ -127,14 +127,46 @@
   realm: web
 - !!python/object:exam.FillProblem
   template: |
-    下面代码打印出的结果是{{result}};
+    下面两处`print`命令打印出的结果分别是{{result1}}、{{result2}};
     ```python
     x = "Hello"
-    def f():
-         x = "Nihao"
-    f()
+    def f(x):
+        x += "World"
+        print(x)
+        return x
+    f(x)
     print(x)
     ```
-  answer: {result: "Hello"}
+  answer: {result1: "Hello", result2: "HelloWorld"}
   realm: programming
+- !!python/object:exam.FillProblem
+  template: |
+    下面两处`print`命令打印出的结果分别是{{result1}}、{{result2}};
+    ```python
+    plans = ["学习", "旅游", "玩游戏"]
+    def add_plan():
+        plans.append("刷视频")
+        print(len(plans))  # 打印plans元素个数
+    add_plan()
+    print(len(plans))
+    ```
+  answer: {result1: 4, result2: 4}
+  realm: programming
+# - !!python/object:exam.FillProblem
+#   template: |
+#     下面代码打印出的结果是{{result}};
+#     ```python
+#     class Person:
+#         def __init__(self, name):
+#             self.name = name
+#         def introduce(self):
+#             print(f"I am {self.name}")
 
+#     class Student(Person):
+#         def introduce(self):
+#             print(f"I am {self.name} from RUC")
+
+#     s = Student(name="Mike")
+#     ```
+#   answer: {result: "Hello"}
+#   realm: programming

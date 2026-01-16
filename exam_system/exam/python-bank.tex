@@ -104,13 +104,27 @@ Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderlin
 \item%
 连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{IP地址}、\autolenunderline{端口号}两部分;%
 \item%
-下面代码打印出的结果是\autolenunderline{Hello};
+下面两处\verb|print|命令打印出的结果分别是\autolenunderline{Hello}、\autolenunderline{HelloWorld};
 \begin{lstlisting}[language=python]
 x = "Hello"
-def f():
-     x = "Nihao"
-f()
+def f(x):
+    x += "World"
+    print(x)
+    return x
+f(x)
 print(x)
+
+\end{lstlisting}
+%
+\item%
+下面两处\verb|print|命令打印出的结果分别是\autolenunderline{4}、\autolenunderline{4};
+\begin{lstlisting}[language=python]
+plans = ["学习", "旅游", "玩游戏"]
+def add_plan():
+    plans.append("刷视频")
+    print(len(plans))  # 打印plans元素个数
+add_plan()
+print(len(plans))
 
 \end{lstlisting}
 %
@@ -221,21 +235,21 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 ~~(D) \verb|card["suit"]=input()|
 %
 \item%
-为学生名单列表\verb|students|增加两位新同学"Mike"和"Lucy"，可行的命令是？~~\mypar{B}\\
-(A) \verb|students.append("Mike, Lucy")|
-~~(B) \verb|students.append("Mike"); students.append("Lucy")| 
-~~(C) \verb|students.extend("Mike", "Lucy")|
-~~(D) \verb|students + ["Mike", "Lucy"]|
+为学生名单列表\verb|students|增加两位新同学"M"和"L"，可行的命令是？~~\mypar{B}\\
+(A) \verb|students.append("M, L")|
+~~(B) \verb|students.append("M"); students.append("L")| 
+~~(C) \verb|students.extend("M", "L")|
+~~(D) \verb|students + ["M", "L"]|
 %
 \item%
 关于列表说法正确的是？~~\mypar{D}\\
 (A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
 \item%
 下面那个命令会导致变量id的变化？~~\mypar{D}\\
-(A) \verb|x="League of Legends"; print(x)|
-~~(B) \verb|x=["League of Legends"]; x.append("Honor of Kings")| 
-~~(C) \verb|x=["League of Legends"]; x += ["Honor of Kings"]|
-~~(D) \verb|x="League of Legends"; x += "Honor of Kings"|
+(A) \verb|x="LoL"; print(x)|
+~~(B) \verb|x=["LoL"]; x.append("Honor of Kings")| 
+~~(C) \verb|x=["LoL"]; x += ["Honor of Kings"]|
+~~(D) \verb|x="LoL"; x += "Honor of Kings"|
 %
 \item%
 将列表\verb|cmd=["pip", "install", "pygame"]|拆分为\verb|cmd="pip"|, \verb|args=["install, "pygame"]|两部分，最便捷的有效方法是？~~\mypar{D}\\
@@ -298,6 +312,18 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 \item%
 下面哪个赋值命令可以正常运行;~~\mypar{B}\\
 (A) \verb|score := 100|~~(B) \verb|score:str = 100|~~(C) \verb|int score = 100|~~(D) \verb|score == 100|%
+\item%
+关于下述程序，下面说法错误的是;
+\begin{lstlisting}[language=python]
+x = ["Hello"]
+def f():
+    x.append("RUC")
+f()
+print(" ".join(x))
+
+\end{lstlisting}
+~~\mypar{D}\\
+(A) 最后打印结果为Hello RUC~~(B) 第一个\verb|x|为全局变量~~(C) \verb|f()|中的\verb|x|为全局变量~~(D) \verb|f()|中的\verb|x|为局部变量%
 \item%
 实现主机之间网络连接的标准方法是建立;~~\mypar{C}\\
 (A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
