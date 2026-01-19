@@ -299,7 +299,7 @@ class TrueFalseProblem(OtherProblem):
 
     def __setstate__(self, state):
         super().__setstate__(state)
-        self.template += '~~{{answer}}'
+        self.template += r'\hfill~~{{answer}}'
         if 'answer' in state:
             if isinstance(state['answer'], bool):
                 self.answer = 'true' if state['answer'] else 'false'
@@ -314,7 +314,7 @@ class ChoiceProblem(OtherProblem):
 
     def __setstate__(self, state):
         super().__setstate__(state)
-        self.template += '~~{{answer}}'
+        self.template += r'\hfill~~{{answer}}'
         option_len = sum(map(len, state['options'].values()))
         options = ['(%s) %s'%(k, v) for k, v in state['options'].items()]
         if option_len > 40:
@@ -362,7 +362,3 @@ class FillProblem(OtherProblem):
         problems = cls.read_yaml(filename, *args, **kwargs)
         return getattr(problem_selection, strategy)(problems, n)
 
-
-
-# with open('bank/python_choice.yaml', encoding='utf-8') as fo:
-#     problem = yaml.unsafe_load(fo)[0]

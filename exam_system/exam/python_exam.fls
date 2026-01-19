@@ -146,8 +146,8 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
-INPUT /usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty
-INPUT /usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty
+INPUT exampaper.sty
+INPUT exampaper.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty

@@ -64,9 +64,9 @@ Python中进行幂运算的运算符是\autolenunderline{**};
 \item%
 写出至少三种内建类型: \autolenunderline{int}、\autolenunderline{float}、\autolenunderline{str};%
 \item%
-C 语言中的数组类似于 Python 中的$\autolenunderline{list}$类型;%
+C 语言中的数组类似于 Python 中的\autolenunderline{`list`}类型;%
 \item%
-C 语言中的结构体类似于 Python 中的$\autolenunderline{dict}$类型;%
+C 语言中的结构体类似于 Python 中的\autolenunderline{`dict`}类型;%
 \item%
 程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{../huairou/bimsa.txt}、\autolenunderline{/beijing/huairou/bimsa.txt};%
 \item%
@@ -86,7 +86,7 @@ Python脚本文件后缀是\autolenunderline{.py};%
 \item%
 循环语句中，Python 的控制命令有: \autolenunderline{break}、\autolenunderline{continue};%
 \item%
-读取文件内容前，一般用\autolenunderline{open}创建文件对象;%
+读取文件内容前，一般用\autolenunderline{open}函数创建文件对象;%
 \item%
 文件操作结束时候要执行\autolenunderline{close}命令;%
 \item%
@@ -104,11 +104,11 @@ Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderlin
 \item%
 连接某个主机时，通常要先获得服务器的具体地址，包括\autolenunderline{IP地址}、\autolenunderline{端口号}两部分;%
 \item%
-下面两处\verb|print|命令打印出的结果分别是\autolenunderline{Hello}、\autolenunderline{HelloWorld};
+下面两处\verb|print|命令打印出的结果分别是\autolenunderline{angela}、\autolenunderline{angelababy};
 \begin{lstlisting}[language=python]
-x = "Hello"
+x = "angela"
 def f(x):
-    x += "World"
+    x += "baby"
     print(x)
     return x
 f(x)
@@ -180,9 +180,6 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 类\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可用\verb|Hero.attack|或通过其对象访问;
 ~~\true%
 \item%
-类\verb|Hero|初始化中定义了对象的\verb|damage|属性。该属性可用\verb|Hero.damage|访问;
-~~\false%
-\item%
 继承时，子类通常会自动拥有父类方法，且可重写父类方法;
 ~~\true%
 \item%
@@ -220,10 +217,12 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 (A) 元组~~(B) 字典~~(C) 列表~~(D) 集合%
 \item%
 关于内建变量解释正确的是？~~\mypar{B}\\
-(A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的~~(C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
+(A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的\\
+(C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
 \item%
 学习编程的第一个命令是？~~\mypar{A}\\
-(A) 打印Hello World~~(B) 打印Hello Kitty~~(C) 打印Hello Kugou~~(D) 打印Hey man%
+(A) 打印Hello World~~(B) 打印Hello Kitty\\
+(C) 打印Hello Kugou~~(D) 打印Hey man%
 \item%
 下面哪个是可变变量的类型？~~\mypar{C}\\
 (A) 字符串~~(B) 数字~~(C) 列表~~(D) 元组%
@@ -231,31 +230,36 @@ Python发明人是在什么情况下发明Python的？~~\mypar{C}\\
 下面关于字典\verb|card={"number":3, "suit":"club"}|的使用（语法上）错误的是？~~\mypar{A}\\
 (A) \verb|card.number=3|
 ~~(B) \verb|card["number"]="A"| 
-~~(C) \verb|card[3]=card["number"]|
+\\
+(C) \verb|card[3]=card["number"]|
 ~~(D) \verb|card["suit"]=input()|
 %
 \item%
 为学生名单列表\verb|students|增加两位新同学"M"和"L"，可行的命令是？~~\mypar{B}\\
 (A) \verb|students.append("M, L")|
 ~~(B) \verb|students.append("M"); students.append("L")| 
-~~(C) \verb|students.extend("M", "L")|
+\\
+(C) \verb|students.extend("M", "L")|
 ~~(D) \verb|students + ["M", "L"]|
 %
 \item%
 关于列表说法正确的是？~~\mypar{D}\\
-(A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组~~(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
+(A) 列表中的元素不能再是列表~~(B) 列表中的元素不能是元组\\
+(C) 列表中的元素类型必须相同~~(D) 在表示数据方面，列表和元组没有明显区别%
 \item%
 下面那个命令会导致变量id的变化？~~\mypar{D}\\
 (A) \verb|x="LoL"; print(x)|
 ~~(B) \verb|x=["LoL"]; x.append("Honor of Kings")| 
-~~(C) \verb|x=["LoL"]; x += ["Honor of Kings"]|
+\\
+(C) \verb|x=["LoL"]; x += ["Honor of Kings"]|
 ~~(D) \verb|x="LoL"; x += "Honor of Kings"|
 %
 \item%
 将列表\verb|cmd=["pip", "install", "pygame"]|拆分为\verb|cmd="pip"|, \verb|args=["install, "pygame"]|两部分，最便捷的有效方法是？~~\mypar{D}\\
 (A) \verb|cmd = cmd[0]; args = cmd[1:]|
 ~~(B) \verb|args = cmd[1:]; cmd = cmd[0]| 
-~~(C) \verb|cmd, *args = cmd|
+\\
+(C) \verb|cmd, *args = cmd|
 ~~(D) \verb|cmd, args = cmd|
 %
 \item%
@@ -276,7 +280,8 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 \item%
 定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
 ~~\mypar{B}\\
-(A) \verb|foo(1)|~~(B) \verb|foo(1, 2, 3, 'hello')|~~(C) \verb|foo(1, y=2, z='hello')|~~(D) \verb|foo(y=3, 2, 3)|%
+(A) \verb|foo(1)|~~(B) \verb|foo(1, 2, 3, 'hello')|\\
+(C) \verb|foo(1, y=2, z='hello')|~~(D) \verb|foo(y=3, 2, 3)|%
 \item%
 下面哪个是Python创建类的关键字;~~\mypar{C}\\
 (A) def~~(B) classdef~~(C) class~~(D) cls%
@@ -285,33 +290,45 @@ for循环不能用于遍历什么类型的数据;~~\mypar{C}\\
 (A) init~~(B) new~~(C) cls~~(D) 没有关键字%
 \item%
 设\verb|Card|是类名，card是其对象，则下述说法错误的是;~~\mypar{D}\\
-(A) Card也是变量~~(B) Card可像函数一样调用~~(C) card的类型是Card~~(D) Card本身无类型%
+(A) Card也是变量~~(B) Card可像函数一样调用\\
+(C) card的类型是Card~~(D) Card本身无类型%
 \item%
 下面哪个是Python初始化对象的方法;~~\mypar{B}\\
 (A) \verb|__new__|~~(B) \verb|__init__|~~(C) \verb|_new_|~~(D) \verb|_init_|%
 \item%
-设类\verb|Hero|中定义了方法\verb|attack|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;~~\mypar{A}\\
-(A) \verb|hero.attack|~~(B) \verb|hero['attack']|~~(C) \verb|herro(attack)|~~(D) \verb|attack.hero|%
+设类\verb|Hero|中定义了对象属性\verb|damage|，\verb|hero|是\verb|Hero|的对象。正确访问属性\verb|damage|的命令是;~~\mypar{A}\\
+(A) \verb|hero.damage|~~(B) \verb|hero['damage']|\\
+(C) \verb|herro(damage)|~~(D) \verb|damage.hero|%
+\item%
+设类\verb|Hero|中定义了方法\verb|def attack(self, other): ...|，\verb|hero|是\verb|Hero|的对象。正确调用这个方法的命令是;
+~~\mypar{A}\\
+(A) \verb|hero.attack(other)|~~(B) \verb|attack(self, other)|\\
+(C) \verb|Hero.attack(other)|~~(D) \verb|hero.attack("other")|%
 \item%
 子类Knight继承父类Hero的语法是;~~\mypar{D}\\
-(A) \verb|subclass Knight(Hero)|~~(B) \verb|Knight extend Hero|~~(C) \verb|child Knight(Hero)|~~(D) \verb|class Knight(Hero)|%
+(A) \verb|subclass Knight(Hero)|~~(B) \verb|Knight extend Hero|\\
+(C) \verb|child Knight(Hero)|~~(D) \verb|class Knight(Hero)|%
 \item%
 下面哪个是Python导入包的关键字;~~\mypar{B}\\
 (A) \verb|include|~~(B) \verb|import|~~(C) \verb|export|~~(D) \verb|use|%
 \item%
 安装包\verb|bs4|后，用户想直接在脚本中使用包中的类\verb|BeautifulSoup|，那么应该先做什么;
 ~~\mypar{C}\\
-(A) 无需导入直接使用BeautifulSoup~~(B) \verb|import bs4 as BeautifulSoup|~~(C) \verb|from bs4 import BeautifulSoup|~~(D) \verb|import BeautifulSoup| from bs4%
+(A) 无需导入直接使用BeautifulSoup~~(B) \verb|import bs4 as BeautifulSoup|\\
+(C) \verb|from bs4 import BeautifulSoup|~~(D) \verb|import BeautifulSoup| from bs4%
 \item%
 通过\verb|from PIL import Image|导入包之后，下面不可以做的是;
 ~~\mypar{A}\\
-(A) 使用变量\verb|PIL|~~(B) 使用变量\verb|Image|~~(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
+(A) 直接使用变量\verb|PIL|~~(B) 直接使用变量\verb|Image|\\
+(C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
 \item%
 下面哪个是不合法的命令;~~\mypar{A}\\
-(A) \verb|class = 0|~~(B) \verb|class_ = 520|~~(C) \verb|print = 520|~~(D) \verb|print(520)|%
+(A) \verb|class = 0|~~(B) \verb|class_ = 520|\\
+(C) \verb|print = 520|~~(D) \verb|print(520)|%
 \item%
 下面哪个赋值命令可以正常运行;~~\mypar{B}\\
-(A) \verb|score := 100|~~(B) \verb|score:str = 100|~~(C) \verb|int score = 100|~~(D) \verb|score == 100|%
+(A) \verb|score := 100|~~(B) \verb|score:str = 100|\\
+(C) \verb|int score = 100|~~(D) \verb|score == 100|%
 \item%
 关于下述程序，下面说法错误的是;
 \begin{lstlisting}[language=python]
@@ -323,7 +340,8 @@ print(" ".join(x))
 
 \end{lstlisting}
 ~~\mypar{D}\\
-(A) 最后打印结果为Hello RUC~~(B) 第一个\verb|x|为全局变量~~(C) \verb|f()|中的\verb|x|为全局变量~~(D) \verb|f()|中的\verb|x|为局部变量%
+(A) 最后打印结果为Hello RUC~~(B) 第一个\verb|x|为全局变量\\
+(C) \verb|f()|中的\verb|x|为全局变量~~(D) \verb|f()|中的\verb|x|为局部变量%
 \item%
 实现主机之间网络连接的标准方法是建立;~~\mypar{C}\\
 (A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%

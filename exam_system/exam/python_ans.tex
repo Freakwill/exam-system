@@ -39,28 +39,30 @@
 \item%
 说程序设计体现 Python 简洁明了的风格的形容词是\autolenunderline{pythonic};%
 \item%
+写出为变量hello赋值为字符串\verb|Hello, Professor|的语句: \autolenunderline{hello="Hello, Professor"};
+%
+\item%
 运算符\autolenunderline{+}可以将多个字符串拼接起来;
+%
+\item%
+Python中进行幂运算的运算符是\autolenunderline{**};
 %
 \item%
 C 语言中的数组类似于 Python 中的\autolenunderline{`list`}类型;%
 \item%
-C 语言中的结构体类似于 Python 中的\autolenunderline{`dict`}类型;%
-\item%
 程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：\autolenunderline{../huairou/bimsa.txt}、\autolenunderline{/beijing/huairou/bimsa.txt};%
 \item%
-如果函数没有返回语句，那么它默认返回: \autolenunderline{None};%
+Python脚本文件后缀是\autolenunderline{.py};%
+\item%
+函数返回语句的关键字是: \autolenunderline{return};%
 \item%
 循环语句中，Python 的控制命令有: \autolenunderline{break}、\autolenunderline{continue};%
 \item%
-读取文件内容前，一般用\autolenunderline{open}创建文件对象;%
-\item%
-文件操作结束时候要执行\autolenunderline{close}命令;%
-\item%
-创建文件对象的常用语法糖是\autolenunderline{with}语句;%
+读取文件内容前，一般用\autolenunderline{open}函数创建文件对象;%
 \item%
 定义类方法的关键字是：\autolenunderline{def};%
 \item%
-Python 网络爬虫中堪称绝配的两个第三方库/模块: \autolenunderline{`requests`}、\autolenunderline{`bs4`};%
+至少写出两个你熟悉的标准库: \autolenunderline{os}、\autolenunderline{pathlib};%
 \item%
 表示服务器已成功处理了客户端的请求，并将请求的资源正常返回给客户端的状态码是: \autolenunderline{200};%
 \item%
@@ -96,27 +98,28 @@ print(len(plans))
 \textbf{二、判断题 (本题满分20分，每题 2 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
-字符串的值一旦改变（比如接上其他字符串）其id一定改变~~\true%
-\item%
-用with 语句执行完文件后，应该执行close方法以确保完成对硬盘中文件的操作;~~\false%
-\item%
-定义类Animal之后, 用Animal()新建对象时，程序会自动调用方法\verb|__init__|;
-~~\true%
-\item%
-用open函数打开文件得到的返回值是文件中的内容;~~\false%
-\item%
-相比传统计算机语言，Python 运行速度比较慢，但开发效率高;~~\true%
-\item%
-Python 有 \verb|do-while| 语句;~~\false%
-\item%
 命令\verb|from mypackage import foo|在导入包中的变量foo同时，也会导入包\verb|mypackage|自身;
-~~\false%
+\hfill~~\false%
 \item%
-函数内部不能调用函数自身，否则会陷入无限循环;~~\false%
+Python 是一种动态类型面向对象的过程式解释型语言;\hfill~~\true%
 \item%
-Python的布尔型其实是特殊的整型;~~\true%
+Python 有 \verb|do-while| 语句;\hfill~~\false%
 \item%
-Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
+Python中没有函数指针的概念，函数的行为和普通变量是一样的;\hfill~~\true%
+\item%
+继承时，子类通常会自动拥有父类方法，且可重写父类方法;
+\hfill~~\true%
+\item%
+用open函数打开文件得到的返回值是文件中的内容;\hfill~~\false%
+\item%
+Python 没有 goto 语句;\hfill~~\true%
+\item%
+Python的布尔型其实是特殊的整型;\hfill~~\true%
+\item%
+Python 比 C、Java 容易学;\hfill~~\true%
+\item%
+类\verb|Hero|中定义了方法\verb|attack|。\verb|attack|可用\verb|Hero.attack|或通过其对象访问;
+\hfill~~\true%
 \end{enumerate}%
 
 
@@ -125,56 +128,45 @@ Python 中的函数不能作为另一个函数的参数或返回值;~~\false%
 \textbf{三、选择题 (本题满分40分，每题 4 分, 共 10 题):}%
 \begin{enumerate}[1)]%
 \item%
-关于内建变量解释正确的是？~~\mypar{B}\\
+关于内建变量解释正确的是？\hfill~~\mypar{B}\\
 (A) 内建变量只能在函数内使用~~(B) 内建变量是 Python 预先定义好可直接使用的\\
 (C) 内建变量不可重新赋值~~(D) 内建变量都以双下划线开头和结尾%
 \item%
-学习编程的第一个命令是？~~\mypar{A}\\
-(A) 打印Hello World~~(B) 打印Hello Kitty\\
-(C) 打印Hello Kugou~~(D) 打印Hey man%
-\item%
-Python 的吉祥物是;~~\mypar{D}\\
-(A) 一只袋鼠~~(B) 一只企鹅~~(C) 一只章鱼~~(D) 一条蟒蛇%
-\item%
-下面哪个起到流程控制作用的关键字不是Python的关键字;~~\mypar{D}\\
-(A) break~~(B) continue~~(C) return~~(D) goto%
-\item%
-将列表\verb|cmd=["pip", "install", "pygame"]|拆分为\verb|cmd="pip"|, \verb|args=["install, "pygame"]|两部分，最便捷的有效方法是？~~\mypar{D}\\
-(A) \verb|cmd = cmd[0]; args = cmd[1:]|
-~~(B) \verb|args = cmd[1:]; cmd = cmd[0]| 
+为学生名单列表\verb|students|增加两位新同学"M"和"L"，可行的命令是？\hfill~~\mypar{B}\\
+(A) \verb|students.append("M, L")|
+~~(B) \verb|students.append("M"); students.append("L")| 
 \\
-(C) \verb|cmd, *args = cmd|
-~~(D) \verb|cmd, args = cmd|
+(C) \verb|students.extend("M", "L")|
+~~(D) \verb|students + ["M", "L"]|
 %
 \item%
-下面哪个是Python新建对象的关键字;~~\mypar{D}\\
-(A) init~~(B) new~~(C) cls~~(D) 没有关键字%
+下面哪个起到流程控制作用的关键字不是Python的关键字;\hfill~~\mypar{D}\\
+(A) break~~(B) continue~~(C) return~~(D) goto%
+\item%
+实现主机之间网络连接的标准方法是建立;\hfill~~\mypar{C}\\
+(A) Wifi~~(B) 接口对象~~(C) 套接字对象~~(D) 局域网%
+\item%
+文件操作完毕后，应该;\hfill~~\mypar{D}\\
+(A) 直接退出程序~~(B) 关机~~(C) 拔电源~~(D) 关闭文件对象%
+\item%
+下面哪个是Python创建函数的关键字;\hfill~~\mypar{A}\\
+(A) def~~(B) func~~(C) class~~(D) function%
+\item%
+设类\verb|Hero|中定义了对象属性\verb|damage|，\verb|hero|是\verb|Hero|的对象。正确访问属性\verb|damage|的命令是;\hfill~~\mypar{A}\\
+(A) \verb|hero.damage|~~(B) \verb|hero['damage']|\\
+(C) \verb|herro(damage)|~~(D) \verb|damage.hero|%
 \item%
 通过\verb|from PIL import Image|导入包之后，下面不可以做的是;
-~~\mypar{A}\\
+\hfill~~\mypar{A}\\
 (A) 直接使用变量\verb|PIL|~~(B) 直接使用变量\verb|Image|\\
 (C) 为变量\verb|Image|赋值~~(D) 为变量\verb|PIL|赋值%
 \item%
-下面哪个是Python导入包的关键字;~~\mypar{B}\\
-(A) \verb|include|~~(B) \verb|import|~~(C) \verb|export|~~(D) \verb|use|%
+for循环不能用于遍历什么类型的数据;\hfill~~\mypar{C}\\
+(A) 元组~~(B) 字典~~(C) 整数~~(D) 字符串%
 \item%
-关于下述程序，下面说法错误的是;
-\begin{lstlisting}[language=python]
-x = ["Hello"]
-def f():
-    x.append("RUC")
-f()
-print(" ".join(x))
-
-\end{lstlisting}
-~~\mypar{D}\\
-(A) 最后打印结果为Hello RUC~~(B) 第一个\verb|x|为全局变量\\
-(C) \verb|f()|中的\verb|x|为全局变量~~(D) \verb|f()|中的\verb|x|为局部变量%
-\item%
-定义函数 \verb|def foo(x, y, z:int=1, *args, **args): pass|。正确调用这个函数的命令是;
-~~\mypar{B}\\
-(A) \verb|foo(1)|~~(B) \verb|foo(1, 2, 3, 'hello')|\\
-(C) \verb|foo(1, y=2, z='hello')|~~(D) \verb|foo(y=3, 2, 3)|%
+下面哪个是不合法的命令;\hfill~~\mypar{A}\\
+(A) \verb|class = 0|~~(B) \verb|class_ = 520|\\
+(C) \verb|print = 520|~~(D) \verb|print(520)|%
 \end{enumerate}%
 
 
