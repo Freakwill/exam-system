@@ -66,6 +66,8 @@ class ExamPaper(pylatex_ext.XeDocument):
         self.preamble.append(Command('cfoot', NoEscape(Command('footnotesize', NoEscape(r'第~\thepage~页~(共~\pageref{LastPage}~页)')).dumps())))
         self.preamble.append(Command('renewcommand', arguments=Arguments(NoEscape(r'\headrulewidth'), '0pt')))
 
+
+
         # header = PageStyle("header")      
         # with header.create(Foot("C")):
         #     ft = Command('footnotesize', arguments=NoEscape('第~\\thepage~页~(共~\pageref{LastPage}~页)'))
@@ -112,7 +114,7 @@ class ExamPaper(pylatex_ext.XeDocument):
         self.append(Command('thispagestyle', 'plain'))
 
     def check(self, a):
-        return hasattr(self, a) and getattr(self, a)
+        return hasattr(self, a)
 
     def make_fill(self):
         # make filling problems
@@ -165,17 +167,19 @@ class ExamPaper(pylatex_ext.XeDocument):
         sh.lpr('temp.pdf')
         sh.rm('temp.pdf')
 
-    def remove_answer(self):
+    def mask_answer(self):
         if hasattr(self, 'choice'):
             for p in self.choice:
                 p.mask_flag = True
-        for p in self.truefalse:
-            p.mask_flag = True
-        for p in self.fill:
-            p.mask_flag = True
-
-        for p in self.calculation:
-            p.solution = None
+        if hasattr(self, 'truefalse'):
+            for p in self.truefalse:
+                p.mask_flag = True
+        if hasattr(self, 'fill'):
+            for p in self.fill:
+                p.mask_flag = True
+        if hasattr(self, 'calculation'):
+            for p in self.calculation:
+                p.solution = None
 
 
 class Problem(BaseTemplate):
@@ -277,9 +281,13 @@ class OtherProblem(Problem):
 
     def totex(self):
         if self.mask_flag:
+            self.mask_answer()
+        return super().totex()
+
+    def mask_answer(self):
+        if self.mask_flag:
             for k in self.masked:
                 self[k] = self.mask
-        return super().totex()
 
     def __setstate__(self, state):
         super().__setstate__(state)
@@ -307,7 +315,12 @@ class ChoiceProblem(OtherProblem):
     def __setstate__(self, state):
         super().__setstate__(state)
         self.template += '~~{{answer}}'
-        choices = '~~'.join(['(%s) %s'%(k, v) for k, v in state['options'].items()])
+        option_len = sum(map(len, state['options'].values()))
+        options = ['(%s) %s'%(k, v) for k, v in state['options'].items()]
+        if option_len > 40:
+            choices = f"{options[0]}~~{options[1]}\\\\\n{options[2]}~~{options[3]}"
+        else:
+            choices = '~~'.join(options)
         self.template += '\\\\\n' + choices
         self.solution = None
         self.parameter.update({'answer': Command('mypar', self.answer)})
@@ -320,24 +333,34 @@ class FillProblem(OtherProblem):
 
     def __setstate__(self, state):
         super().__setstate__(state)
-        self.masked = set(self.answer.keys()) 
-        self.parameter.update({k:Command('autolenunderline', NoEscape(v)) for k, v in self.answer.items()})
+        self.masked = set(self.answer.keys())
+        self.parameter.update({k: Command('autolenunderline', NoEscape(v)) for k, v in self.answer.items()})
+
+    def mask_answer(self):
+        if self.mask_flag:
+            for k in self.masked:
+                self[k] = Command('autolenunderline', NoEscape(self.answer[k]), options='mask')
 
     @property
     def n_fills(self):
         return len(self.answer)
 
+    # @classmethod
+    # def random(cls, n=1, *args, **kwargs):
+    #     # read n problems from yaml files (randomly)
+    #     problems = super().random(n=n, *args, **kwargs)
+    #     n_ = 0
+    #     for k, p in enumerate(problems):
+    #         if n_ >= n:
+    #             return problems[:k]
+    #         n_ += p.n_fills
+    #     return problems
+
     @classmethod
-    def random(cls, n=1, *args, **kwargs):
+    def random(cls, filename, n=1, strategy='deap', *args, **kwargs):
         # read n problems from yaml files (randomly)
-        problems = super().random(n=n, *args, **kwargs)
-        n_ = 0
-        for k, p in enumerate(problems):
-            print(k, n_, n, p.n_fills)
-            if n_ >= n:
-                return problems[:k]
-            n_ += p.n_fills
-        return problems
+        problems = cls.read_yaml(filename, *args, **kwargs)
+        return getattr(problem_selection, strategy)(problems, n)
 
 
 

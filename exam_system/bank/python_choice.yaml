@@ -194,10 +194,17 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: "`hero.attack`", B: "`hero['attack']`", C: "`herro(attack)`", D: "`attack.hero`"}
+  options: {A: "`hero.damage`", B: "`hero['damage']`", C: "`herro(damage)`", D: "`damage.hero`"}
   answer: A
   realm: oop
-  template: 设类`Hero`中定义了方法`attack`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
+  template: 设类`Hero`中定义了对象属性`damage`，`hero`是`Hero`的对象。正确访问属性`damage`的命令是;
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: "`hero.attack(other)`", B: "`attack(self, other)`", C: "`Hero.attack(other)`", D: "`hero.attack(\"other\")`"}
+  answer: A
+  realm: oop
+  template: |
+    设类`Hero`中定义了方法`def attack(self, other): ...`，`hero`是`Hero`的对象。正确调用这个方法的命令是;
 - !!python/object:exam.ChoiceProblem
   parameter: {}
   options: {A: "`subclass Knight(Hero)`", B: "`Knight extend Hero`", C: "`child Knight(Hero)`", D: "`class Knight(Hero)`"}
@@ -229,7 +236,7 @@
 
 - !!python/object:exam.ChoiceProblem
   parameter: {}
-  options: {A: 使用变量`PIL`, B: 使用变量`Image`, C: 为变量`Image`赋值, D: 为变量`PIL`赋值}
+  options: {A: 直接使用变量`PIL`, B: 直接使用变量`Image`, C: 为变量`Image`赋值, D: 为变量`PIL`赋值}
   answer: A
   realm: import
   template: |

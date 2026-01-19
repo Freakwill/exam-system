@@ -61,23 +61,14 @@ class PythonExamPaper(ExamPaper):
 
 paper = PythonExamPaper(title="北京雁栖湖数学与人工智能学院2025-2026学年第一学期《Python程序设计》课程期末考试试卷（A卷）")
 
-paper.calculation = []
+# paper.calculation = []
 paper.fill = (FillProblem@ code).random(filename='python_fill', n=n_fill)
 paper.truefalse = (TrueFalseProblem @ replace_backticks_with_verb).random(filename='python_truefalse', n=n_truefalse)
 paper.choice = (ChoiceProblem@ code).random(filename='python_choice', n=n_choice) 
 paper.build()
-# paper.write(filename='exam/python_ans')
+paper.write(filename='exam/python_ans')
 
-
-for p in paper.choice:
-    p.mask_flag = True
-for p in paper.truefalse:
-    p.mask_flag = True
-for p in paper.fill:
-    p.mask_flag = True
-
-for p in paper.calculation:
-    p.solution = None
+paper.mask_answer()
 
 paper.data = []
 paper.build()

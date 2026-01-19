@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1768462505 "python_exam.tex" "python_exam.pdf" "python_exam" 1768462508
-  "/dev/null" 1768462505 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1768814944 "python_exam.tex" "python_exam.pdf" "python_exam" 1768814946
+  "/dev/null" 1768814939 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -13,6 +13,7 @@
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1254269338 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1254269338 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm" 1254269338 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
+  "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm" 1254269338 17144 271aaf9ebb339934b04110dc5211fba4 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm" 1254269338 12216 265ff4deab161a560d37046d13363b8c ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm" 1254269338 1368 6a60e6a5e029141041d64d339b87e533 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/lmex10.tfm" 1148093231 992 ce925c9346c7613270a79afbee98c070 ""
@@ -119,9 +120,9 @@
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
   "/usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt" 1719576769 3519750 57b20ef4dc0fbd411dfb49cd4a5ccb3e ""
   "/usr/local/texlive/2016/texmf.cnf" 1719569212 602 3ed9fba4493354f5e25510020113f29f ""
-  "/usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty" 1529054314 1685 4f6da10271a173a1d182ab0ac093abe2 ""
-  "python_exam.aux" 1768462508 90 afdd9ae1ee058bef8555c423389338fa ""
-  "python_exam.tex" 1768462499 5855 84c35eb93b3da74072389bfc548823d1 ""
+  "/usr/local/texlive/texmf-local/tex/latex/mypackage/exampaper.sty" 1768813163 1988 62ca8dfa8e2b444d98010c057835a57c ""
+  "python_exam.aux" 1768814946 90 afdd9ae1ee058bef8555c423389338fa ""
+  "python_exam.tex" 1768814938 6602 8a42c60cb95ae7080c63564f968ed0d6 ""
   (generated)
   "python_exam.pdf"
   "python_exam.aux"

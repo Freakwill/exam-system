@@ -37,12 +37,12 @@
 #   answer: {print: "print", open: "open", input: "input"}
 #   realm: type
 - !!python/object:exam.FillProblem
-  template: "C 语言中的数组类似于 Python 中的${{type}}$类型;"
-  answer: {type: 'list'}
+  template: "C 语言中的数组类似于 Python 中的{{type}}类型;"
+  answer: {type: '`list`'}
   realm: type
 - !!python/object:exam.FillProblem
-  template: "C 语言中的结构体类似于 Python 中的${{type}}$类型;"
-  answer: {type: 'dict'}
+  template: "C 语言中的结构体类似于 Python 中的{{type}}类型;"
+  answer: {type: '`dict`'}
   realm: type
 - !!python/object:exam.FillProblem
   template: "程序工作目录为'/beijing/haidian', 文件'bimsa.txt'在文件夹'/beijing/huairou'中，该文件的绝对路径和相对路径分别为：{{rel_path}}、{{abs_path}};"
@@ -84,7 +84,7 @@
   answer: {break: "break", continue: "continue"}
   realm: structured
 - !!python/object:exam.FillProblem
-  template: "读取文件内容前，一般用{{open}}创建文件对象;"
+  template: "读取文件内容前，一般用{{open}}函数创建文件对象;"
   answer: {open: "open"}
   realm: file
 - !!python/object:exam.FillProblem
@@ -129,15 +129,15 @@
   template: |
     下面两处`print`命令打印出的结果分别是{{result1}}、{{result2}};
     ```python
-    x = "Hello"
+    x = "angela"
     def f(x):
-        x += "World"
+        x += "baby"
         print(x)
         return x
     f(x)
     print(x)
     ```
-  answer: {result1: "Hello", result2: "HelloWorld"}
+  answer: {result1: "angela", result2: "angelababy"}
   realm: programming
 - !!python/object:exam.FillProblem
   template: |

@@ -19,7 +19,7 @@ def deap(problems, n=1, n_fills=20, excluded=True):
     import numpy as np
     from deap import base, creator, tools, algorithms
 
-    creator.create("FitnessMulti", base.Fitness, weights=(1.0, 1.0))  # 两个目标
+    creator.create("FitnessMulti", base.Fitness, weights=(-1.0, 1.0))  # 两个目标
     creator.create("Individual", np.ndarray, fitness=creator.FitnessMulti)
 
     IND_SIZE = len(problems)  # 决策变量个数
@@ -33,9 +33,9 @@ def deap(problems, n=1, n_fills=20, excluded=True):
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
     def evaluate(individual):
-        ps = [problems[i] for i in individual if i]
-        obj1 = len(toolz.unique([p.realm for p in ps]))
-        obj2 = abs(sum(map(len, [p.answer for p in ps])) - n_fills)
+        ps = [p for k, p in zip(individual, problems) if k]
+        obj1 = abs(sum(p.n_fills for p in ps) - n_fills)
+        obj2 = len(list(toolz.unique([p.realm for p in ps])))
         return obj1, obj2
 
     toolbox.register("evaluate", evaluate)
@@ -43,9 +43,9 @@ def deap(problems, n=1, n_fills=20, excluded=True):
     toolbox.register("mutate", tools.mutFlipBit, indpb=0.1)  # 位翻转变异
     toolbox.register("select", tools.selNSGA2)  # NSGA-II选择
 
-    POP_SIZE = 50
-    GENERATIONS = 20
-    CXPB, MUTPB = 0.7, 0.2
+    POP_SIZE = 80
+    GENERATIONS = 100
+    CXPB, MUTPB = 0.72, 0.2
 
     pop = toolbox.population(n=POP_SIZE)
     
@@ -55,11 +55,10 @@ def deap(problems, n=1, n_fills=20, excluded=True):
         lambda_=POP_SIZE,
         cxpb=CXPB, mutpb=MUTPB,
         ngen=GENERATIONS,
-        verbose=True
+        verbose=False
     )
     
     best = min(pop, key=lambda ind: ind.fitness.values[1])
-    
-    return best
 
+    return [p for k, p in zip(best, problems) if k]
 
